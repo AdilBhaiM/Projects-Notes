@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+body{
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html{
+    font-size: 62.5%;
+}
+
+
+/***************************************************NAVIGATIONBAR********************************************* */
+
+
+/* ________________________border and align work_________________________ */
+
+
+
+/* ______classes utility and floating_____ */
+
+
+.header .navbar .logo{
+    float: left;
+}
+
+.header .navbar .nav-items{
+    float: right;
+}
+
+.header .navbar .nav-item{
+    display: inline-block;
+}
+.nav-item{
+    letter-spacing: 0.1em;
+}
+
+.navbar::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.container::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* _____________container utility and links' coloring___________ */
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.short-logo:link{
+    text-decoration: none;
+}
+
+.navbar{
+    background-image: linear-gradient( 76.3deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
+    border-bottom: 3px solid red;
+    padding-bottom: 0.3em;
+}
+
+.border:hover{
+    border-bottom: 0.1rem solid rgb(220, 219, 219);
+}
+
+.border:link{
+    border-right: 0.1rem solid rgb(220, 219, 219);
+    padding-right: 0.5em;
+}
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+.section{
+    margin-top: 6em;
+}
+
+/* ___________font adjustment and coloring text by class utility__________________ */
+
+.logo{
+    font-size: 4rem;
+    font-weight: 500;
+    letter-spacing: -0.1rem;
+    padding-top: 0.15em;
+}
+
+ul{
+    font-size: 2rem;
+    padding-top: 1em;
+}
+
+li a{
+    text-decoration: none;
+    margin-right: 0.5em;
+}
+
+.short-logo{
+    color: rgb(220, 219, 219);
+}
+.text-white{
+    color: rgb(255, 255, 255);
+}
+
+/* ***********************************************contact section******************************************* */
+
+
+.form{
+    background-color: rgb(225, 225, 225);
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+.content{
+    border-radius: 6em;
+    background-color: white;
+    box-shadow: 5px 5px 20px 8px #8a8a8aae;
+}
+
+.text-redd{
+    color: rgb(255, 49, 49);
+}
+
+
+.txt{
+    float: left;
+}
+
+.textarea{
+    float: right;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 2.8em;
+}
+
+.img{
+    float: right;
+    height: 55vh;
+    width: 54%;
+}
+
+.form .content::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.btnn{
+    letter-spacing: 0.1em;
+    font-size: 3rem;
+    width: 10%;
+    display: block;
+    margin-left: 45em;
+    margin-top: 14em;
+    text-transform: uppercase;
+    background: red;
+    color: white;
+    outline: none;
+    border: 4px solid red;
+    border-radius: 3em;
+    cursor: pointer;
+}
+
+.btnn:hover{
+    background-color: aliceblue;
+    color: red;
+}
+
+.location{
+    padding: 3em;
+    margin: 10em 10em 5em 10em;
+}
+
+.in-form{
+    padding: 3em 3em 2em 3em;
+    margin: 5em 10em 10em 10em;
+}
+
+
+.txt2 h3::after{
+    content: "*";
+    color: red;
+}
+
+.in-form .txt2{
+    text-align: center;
+}
+
+.location h1{
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 0.3rem;
+    margin-bottom: 0.4em;
+}
+
+.location i{
+    margin-top: 1em;
+}
+
+.in-form h1{
+    font-size: 3.5rem;
+    font-weight: 500;
+    border-bottom: 5px solid rgb(255, 49, 49);
+    margin-bottom: 4em;
+    letter-spacing: 0.5rem;
+    margin-bottom: 0.4em;
+}
+
+.content p{
+    font-size: 1.6em;
+    letter-spacing: 0.09em;
+
+}
+
+.content h3{
+    font-size: 2.3em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin-top: 0.3em;
+    margin-bottom: 0.2em;
+}
+
+.in-form .textarea h2{
+    font-size: 2em;
+    font-weight: 400;
+}
+
+input{
+    margin-bottom: 0.8em;
+    padding: 0.8rem;
+    width: 100%;
+}
+
+select{
+    padding: 0.6rem;
+    margin-bottom: 0.4em;
+}
+
+.location .txt1{
+    text-align: center;
+    margin-top: 2em;
+}
+
+.img img{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img{
+    width: 50%;
+    height: 100%;
+}
+
+
+/* *******************************************************footer************************************************** */
+
+
+.for-text{
+    text-align: center;
+    word-spacing: 0.5em;
+    padding-top: 2em;
+    color: white;
+    margin: 1.5em 0;
+}
+
+.for-text .last-word{
+    font-weight: 300;
+    margin-top: 0.3em;
+}
+
+.for-text .sm-links{
+    word-spacing: 2em;
+    padding-bottom: 0.3em;
+}
+
+.sm-links a{
+    color: white;
+    display: inline-block;
+
+}
+
+.real-foot{
+    background: linear-gradient( 76.3deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
+    height: 125px;
+    border-top: 3px solid red;
+}
+
+
+@media (max-width: 501px){
+    .header .navbar .container .logo{
+        float: none;
+        text-align: center;
+    }
+    
+    .header .navbar .container .nav-items{
+        float: none;
+        text-align: center;
+    }
+
+    html{
+        font-size: 50%;
+    }
+
+    .textarea{
+        float: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    .textarea textarea{
+        width: 100%;
+    }
+
+    .img{
+        width: 100%;
+    }
+
+    .img img{
+        float: none;
+        display: inline-block;
+    }
+
+    .button1{
+        width: 100%;
+        height: 100%;
+    }
+
+    .button1 .btnn{
+        margin: 3em 0;
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+@media (min-width: 502px) and (max-width: 768px){
+    .header .navbar .container .logo{
+        float: none;
+        text-align: center;
+    }
+    
+    .header .navbar .container .nav-items{
+        float: none;
+        text-align: center;
+    }
+
+    html{
+        font-size: 60%;
+    }
+
+    .textarea{
+        float: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    .textarea textarea{
+        width: 100%;
+    }
+
+    .txt1{
+        width: 100%;
+    }
+
+    .img{
+        width: 100%;
+    }
+
+    .img img{
+        float: none;
+        display: inline-block;
+    }
+
+    .button1{
+        width: 100%;
+        height: 100%;
+    }
+
+    .button1 .btnn{
+        margin: 3em 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1128px){
+    html{
+        font-size: 60%;
+    }
+
+    .in-form .textarea{
+        float: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    .textarea textarea{
+        width: 100%;
+    }
+
+    .img{
+        width: 100%;
+    }
+
+    .txt1{
+        width: 100%;
+    }
+
+    .img img{
+        float: none;
+        display: inline-block;
+    }
+
+    .button1{
+        width: 100%;
+        height: 100%;
+    }
+
+    .button1 .btnn{
+        margin: 3em 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 1128px) and (max-width: 1900px){
+    html{
+        font-size: 70%;
+    }
+
+    .in-form .textarea{
+        float: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    .textarea textarea{
+        width: 100%;
+    }
+
+    .txt2{
+        width: 100%;
+    }
+
+    .txt1{
+        width: 100%;
+    }
+
+    .img{
+        width: 100%;
+    }
+
+    .img img{
+        float: none;
+        display: inline-block;
+    }
+
+    .button1{
+        width: 20%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .button1 .btnn{
+        margin: 3em 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .for-text{
+        padding: 0;
+    }
+
+}

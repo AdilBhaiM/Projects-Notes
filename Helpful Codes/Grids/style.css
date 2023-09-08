@@ -1,0 +1,29 @@
+.web{
+    font-family: sans-serif;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows:64px 1fr 64px;
+    height: 99vh;
+    gap: 1em;
+}
+
+.web > *{
+    padding: 20px;
+    border: 2px solid gray;
+}
+
+header{
+    grid-column: 1 / -1;
+}
+
+footer{
+    grid-column: 1 / -1;
+}
+
+
+@media (max-width: 768px){
+    .web{
+        grid-template-columns: 1fr;
+        grid-template-rows: 84px 1fr 1fr 84px;
+    }
+}

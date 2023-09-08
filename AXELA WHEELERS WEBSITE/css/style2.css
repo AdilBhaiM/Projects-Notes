@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+body{
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html{
+    font-size: 62.5%;
+}
+
+
+
+/***************************************************NAVIGATIONBAR********************************************* */
+
+
+/* ________________________border and align work_________________________ */
+
+
+
+/* ______classes utility and floating_____ */
+
+
+.header .navbar .logo{
+    float: left;
+}
+
+.header .navbar .nav-items{
+    float: right;
+}
+
+.header .navbar .nav-item{
+    display: inline-block;
+}
+.nav-item{
+    letter-spacing: 0.1em;
+}
+
+.navbar::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* _____________container utility and links' coloring___________ */
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.con2{
+    max-width: 1700px;
+    width: 100%;
+    margin: 1em auto;
+}
+
+.short-logo:link{
+    text-decoration: none;
+}
+
+.navbar{
+    background-image: linear-gradient( 76.3deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
+    padding-bottom: 0.3em;
+    border-bottom: 3px solid red;
+}
+
+.border:hover{
+    border-bottom: 0.1rem solid rgb(220, 219, 219);
+}
+
+.border:link{
+    border-right: 0.1rem solid rgb(220, 219, 219);
+    padding-right: 0.5em;
+}
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+.section{
+    margin-top: 6em;
+}
+
+.about h1{
+    font-size: 3em;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    word-spacing: 0.1em;
+    padding-bottom: 0.1em;
+    color: rgb(61, 61, 61);
+    border-bottom: 5px solid rgb(255, 53, 3);
+}
+
+.box1{
+    float: left;
+}
+
+.box2{
+    float: right;
+}
+
+.in-box li{
+    list-style-type: none;
+}
+
+.in-box li::before{
+    content: "\2713";
+    font-weight: 700;
+    color: rgb(255, 53, 3);
+    padding-right: 0.5em;
+}
+
+.checks .box1{
+    margin: 2em 0;
+    margin-left: 10em;
+}
+
+.checks .box2{
+    margin: 2em 0;
+    margin-right: 10em;
+}
+
+.checks::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.abouts div{
+    float: left;
+}
+
+.abouts .c-item{
+    text-align: center;
+    margin: 0 7.326em;
+}
+
+.abouts .c-item p{
+    font-size: 1.8em;
+    font-weight: 500;
+}
+.abouts .c-item span{
+    font-size: 2.9em;
+    font-weight: 500;
+    color: rgb(255, 53, 3);
+}
+
+.abouts::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.ranges .c1{
+    margin-top: 4em;
+}
+
+.reaching .c2{
+    border: 3px solid red;
+    margin-top: 8em;
+    border-radius: 7em;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgb(247, 49, 0) 0%, rgba(249,0,0,1) 90.1% );
+    box-shadow: 5px 5px 20px 8px #555555ae;
+}
+
+.c2 .paragraph{
+    float: left;
+}
+
+.c2 .contact{
+    float: right;
+    padding: 0.778em 2.3em;
+}
+
+.paragraph{
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 2em 5em;
+    color: white;
+}
+
+.contact{
+    font-size: 3.5em;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.contact a{
+    color: whitesmoke;
+    background: rgba(255, 255, 255, 0);
+    padding: 0.4em;
+    border: 6px solid rgb(255, 255, 255);
+    border-radius: 2em;
+}
+
+.contact a:link{
+    text-decoration: none;
+}
+
+.contact a:visited{
+    color: whitesmoke;
+    background: rgba(255, 255, 255, 0);
+    border: 1px solid rgb(255, 53, 3);
+}
+
+.contact a:hover{
+    color: rgb(255, 53, 3);
+    background-color: whitesmoke;
+}
+
+.reaching .c2::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.abouts p{
+    display: inline;
+}
+
+.about p{
+    font-size: 1.8em;
+    padding-top: 1em;
+}
+
+.button:link{
+    color: rgb(255, 255, 255);
+    background-color: rgba(177, 177, 177, 0.23);
+}
+
+.button:visited{
+    color: rgb(255, 255, 255);
+}
+
+.button:hover{
+    color: whitesmoke;
+    background-image: linear-gradient( 143.3deg,  rgba(216,27,96,1) 33.1%, rgba(237,107,154,1) 74.9% );
+
+}
+
+/* ___________font adjustment and coloring text by class utility__________________ */
+
+.logo{
+    font-size: 4rem;
+    font-weight: 500;
+    letter-spacing: -0.1rem;
+    padding-top: 0.15em;
+}
+
+ul{
+    font-size: 2rem;
+    padding-top: 1em;
+}
+
+li a{
+    text-decoration: none;
+    margin-right: 0.5em;
+}
+
+.short-logo{
+    color: rgb(220, 219, 219);
+}
+.text-white{
+    color: rgb(255, 255, 255);
+}
+
+
+@media (max-width: 501px){
+    .header .navbar .container .logo{
+        float: none;
+        text-align: center;
+    }
+    
+    .header .navbar .container .nav-items{
+        float: none;
+        text-align: center;
+    }
+
+    html{
+        font-size: 50%;
+    }
+
+    .container .abouts div{
+        float: none;
+    }
+
+    .abouts .c-item{
+        margin-top: 3em;
+    }
+    .checks .box1{
+        float: none;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .checks .box2{
+        float: none;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .c2 .paragraph{
+        float: none;
+        text-align: center;
+    }
+    .c2 .contact{
+        float: none;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media(min-width: 502px) and (max-width: 768px){
+    .header .navbar .container .logo{
+        float: none;
+        text-align: center;
+    }
+    
+    .header .navbar .container .nav-items{
+        float: none;
+        text-align: center;
+    }
+
+    html{
+        font-size: 60%;
+    }
+
+    .container .abouts div{
+        float: none;
+    }
+
+    .abouts .c-item{
+        margin-top: 3em;
+    }
+    .checks .box1{
+        float: none;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .checks .box2{
+        float: none;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .c2 .paragraph{
+        float: none;
+        text-align: center;
+    }
+    .c2 .contact{
+        float: none;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 1111px){
+    html{
+        font-size: 65%;
+    }
+
+    .container .abouts div{
+        float: none;
+    }
+
+    .abouts .c-item{
+        margin-top: 3em;
+    }
+    .checks .box1{
+        float: none;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .checks .box2{
+        float: none;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .c2 .paragraph{
+        float: none;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1112px) and (max-width: 1330px){
+    .container .abouts .c-item5{
+        float: none;
+        display: inline-block;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .reaching{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+}
+
+@media (min-width: 1330px) and (max-width: 2000px){
+    .reaching{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
