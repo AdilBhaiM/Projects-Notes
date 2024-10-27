@@ -473,6 +473,7 @@ html{
     display: inline-block;
     object-fit: contain;
     transform: scale(1.15)rotate(47deg);
+    z-index: 0;
 }
 
 .sec-7 .container .booking-call{
@@ -485,6 +486,7 @@ html{
 .sec-7 .container .booking-call p{
     font-size: 3rem;
     font-weight: 700;
+    z-index: 1;
 }
 
 .sec-7 .container .booking-call .touch-btn-2{
@@ -500,10 +502,12 @@ html{
     display: inline-block;
     height: 46px;
     width: 392px;
+    z-index: 1;
 }
 
 .sec-7 .container .booking-call p a{
     color: #f4f4f499;
+    z-index: 1;
 }
 
 .sec-7 .container .booking-call .p3{
