@@ -152,12 +152,38 @@ from numpy import *
 
 
 methods = {
-    "multiplication": "*",
     "addition": "+",
+    "multiplication": "*",
     "subtraction": "-",
     "division": "/",
     "square_root": "^",
     "boolean(is_equal)": "="}
+
+
+
+def addition():
+
+    while True:
+        adding_len = int(input("How many numbers do you want to add = "))
+        if adding_len <= 1:
+            print("Please write a possible number")
+        else:
+            break
+    nums = []
+    print(f" E.g : \n\t1st Number + 2nd Number = Answer\n")
+    for ind in range(adding_len):
+        num = int(input(f"Enter Number {ind+1} = "))
+        nums.append(num)
+
+    u = 0
+    for inc in nums:
+        u += inc
+
+    print("Your Answer is ", u)
+
+
+
+
 
 
 
@@ -197,21 +223,46 @@ while True:
             indexing()
         print(indices)
         print(f"You have selected these values")
-        for u in indices:
-            print(f"No. {u} : {list(methods.keys())[u]}")
-        for score in methods.values():
-            if 
+        for u in range(len(indices)):
+            print(f"No. {u+1} : {list(methods.keys())[u]}")
+
+
+
+
+
+##################################   Take a loo at it bug starts from here.....   #####################################
+
+
+        for math in range(len(indices)):
+            q = list(methods.keys())[math]
+            if q == "+":
+                addition()
+            else:
+                i = 2
 
 
 
 
 
 
+
+            # elif q == "*":
+    while True:
+        replay = input("Do you want to do math again? (y or n) = ")
+        if replay.lower() == "y":
+            do_you = 'y'
+            break
+        elif replay.lower() == "n":
+            print("Thanks for letting us help you.")
+            do_you = 'n'
+            break
+        else:
+            print("Not an option!")
+
+    if do_you == 'y':
+        continue
+    else:
         break
-    break
-
-
-
 
 
 
