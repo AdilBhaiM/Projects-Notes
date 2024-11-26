@@ -151,50 +151,121 @@ from numpy import *
 
 
 
+
+def get_valid_input(user_input):
+    try:
+        # Try to convert input to an integer
+        user_input = int(user_input)
+        return user_input  # Return the valid input if conversion is successful
+    except ValueError:
+        # Handle the error if the input is not a valid integer
+        print("Error: Invalid input. Please enter a valid input.")
+        return None
+
+
+
+
 methods = {
     "addition": "+",
     "multiplication": "*",
     "subtraction": "-",
     "division": "/",
     "square_root": "^",
-    "boolean(is_equal)": "="}
-
-
+    "boolean(is_equal)": "=="}
 
 def addition():
 
     while True:
-        adding_len = int(input("How many numbers do you want to add = "))
-        if adding_len <= 1:
+        adding_len = input("How many numbers do you want to add = ")
+        add_length = get_valid_input(adding_len)
+        if add_length <= 1:
             print("Please write a possible number")
         else:
             break
     nums = []
     print(f" E.g : \n\t1st Number + 2nd Number = Answer\n")
-    for ind in range(adding_len):
+    for ind in range(add_length):
         num = int(input(f"Enter Number {ind+1} = "))
         nums.append(num)
-
     u = 0
     for inc in nums:
         u += inc
 
     print("Your Answer is ", u)
 
+def Subtraction():
+    print("Subtraction code is in progress")
+    # while True:
+    #     adding_len = input("How many numbers do you want to add = ")
+    #     add_length = get_valid_input(adding_len)
+    #     if add_length <= 1:
+    #         print("Please write a possible number")
+    #     else:
+    #         break
+    # nums = []
+    # print(f" E.g : \n\t1st Number + 2nd Number = Answer\n")
+    # for ind in range(add_length):
+    #     num = int(input(f"Enter Number {ind+1} = "))
+    #     nums.append(num)
+    # u = 0
+    # for inc in nums:
+    #     u += inc
 
+    # print("Your Answer is ", u)
 
+def multiplication():
+    print("Multiplication code is in progress")
+    # while True:
+    #     adding_len = input("How many numbers do you want to add = ")
+    #     add_length = get_valid_input(adding_len)
+    #     if add_length <= 1:
+    #         print("Please write a possible number")
+    #     else:
+    #         break
+    # nums = []
+    # print(f" E.g : \n\t1st Number + 2nd Number = Answer\n")
+    # for ind in range(add_length):
+    #     num = int(input(f"Enter Number {ind+1} = "))
+    #     nums.append(num)
+    # u = 0
+    # for inc in nums:
+    #     u += inc
 
+    # print("Your Answer is ", u)
 
+def Division():
 
+    # while True:
+    #     adding_len = input("How many numbers do you want to add = ")
+    #     add_length = get_valid_input(adding_len)
+    #     if add_length <= 1:
+    #         print("Please write a possible number")
+    #     else:
+    #         break
+    # nums = []
+    # print(f" E.g : \n\t1st Number + 2nd Number = Answer\n")
+    # for ind in range(add_length):
+    #     num = int(input(f"Enter Number {ind+1} = "))
+    #     nums.append(num)
+    # u = 0
+    # for inc in nums:
+    #     u += inc
+
+    print("Division code is in progress")
+    print("Your Answer is ", u)
+
+calculations_num = 0
 
 while True:
+    do_you = "y"
+    calculations_num = 0
     i = 0
 
     ########  Asking from the user that if he do want to proceed or not?
     while True:
         can_start = input("Do you want to Start calculator (y or n) = ")
         if can_start.lower() == "y":
-                #####  Telling the user to write the keywords for the maths i.e: Enter 1 for addition etc.
+                #####  Asking the user to write the keywords for the maths i.e: Enter 1 for addition etc.
             methods_len = len(methods)
             n = 0
             while n < methods_len:
@@ -203,16 +274,24 @@ while True:
             break
         elif can_start.lower() == "n":
             print("Thank you for answering, Have a nice day!")
+            do_you = 'n'
             i = 1
             break
         else:
             print("Answer is not appropriate, please reply (y or n)")
     #######  Asking to the user for how many calculation do you want and which one?
     indices = []
-    while i <= 0:
-        no_calculations = int(input("How many calculations you want to do? = "))
+    while i < 1:
+        while True:
+            no_calculations = input("How many calculations you want to do? = ")
+            
+            no_of_calculations = get_valid_input(no_calculations)
+            if no_of_calculations in range(1, methods_len+1):
+                break
+            else:
+                print(f"Please write a number Between " , 1, " and ", methods_len)
         ####### About this range indexing can be manage esaily
-        for i in range(no_calculations):
+        for i in range(no_of_calculations):
             def indexing():
                 my_index = int(input(f"Enter code of your calculation # {i+1} = "))
                 if my_index >= len(methods):
@@ -223,31 +302,50 @@ while True:
             indexing()
         print(indices)
         print(f"You have selected these values")
-        for u in range(len(indices)):
+        for u in indices:
             print(f"No. {u+1} : {list(methods.keys())[u]}")
 
 
 
 
 
-##################################   Take a loo at it bug starts from here.....   #####################################
+##################################   Update the code int his loop.....   #####################################
 
-
+        print(list(methods.values())[0])
         for math in range(len(indices)):
-            q = list(methods.keys())[math]
+            q = list(methods.values())[math]
             if q == "+":
                 addition()
+                calculations_num += 1
             else:
-                i = 2
+                break
+            if q == "-":
+                Subtraction()
+                calculations_num += 1
+            else:
+                break
+            if q == "*":
+                multiplication()
+                calculations_num += 1
+            else:
+                break
+            if q == "/":
+                Division()
+                calculations_num += 1
+            else:
+                break
+        
 
 
+
+##################################  |||||||||  ##################################
 
 
 
 
 
             # elif q == "*":
-    while True:
+    while True and i < 1 and calculations_num > 0:
         replay = input("Do you want to do math again? (y or n) = ")
         if replay.lower() == "y":
             do_you = 'y'
@@ -258,7 +356,6 @@ while True:
             break
         else:
             print("Not an option!")
-
     if do_you == 'y':
         continue
     else:

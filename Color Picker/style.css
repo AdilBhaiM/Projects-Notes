@@ -8,6 +8,12 @@ body{
     margin: 0;
     padding: 24px;
 }
+
+
+span{
+    /* border: 1pt solid #000; */
+    font-size: 1rem;
+}
 .parent {
     /* column-gap: 24px;     */
     display: flex;
@@ -15,13 +21,15 @@ body{
     align-items: center;
     /* justify-content: center; */
     align-self: center;
-    /* border: 2px solid #000;   */
+    /*    */
     width: fit-content;
     background-color: antiquewhite;
     padding: 28px 45px;
     border-radius: 23px;
     row-gap: 40px;
     flex-wrap: wrap;
+    /* border: 1.26px solid #000; */
+
 }
 
 .transparent-text {
@@ -38,6 +46,10 @@ h3{
     /* height: fit-content; */
     color: rgba(255, 255, 255, 0.2); /* Fully transparent text */
     text-shadow: rgba(255, 0, 0);
+    display: flex;
+    /* border: 2px solid #000; */
+    align-items: center;
+    column-gap: 12px;
 
 }
 
