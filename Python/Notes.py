@@ -1,5 +1,5 @@
 from numpy import *
-
+from functools import reduce
 # a = 20.23
 # b = a + float(30)
 # print(b)
@@ -177,14 +177,18 @@ from numpy import *
 
 
 
-TotalElements = int(input("Input numnber of elements for an array = "))
-array = zeros(TotalElements, dtype=int)
-for j in range(len(array)):
-    Element = int(input("Enter Element = "))
-    array[j] = Element
-i = 0
-n = len(array)
-while i<n:
-    print(array[i])
-    i += 1
+# TotalElements = int(input("Input numnber of elements for an array = "))
+# array = zeros(TotalElements, dtype=int)
+# for j in range(len(array)):
+#     Element = int(input("Enter Element = "))
+#     array[j] = Element
+# i = 0
+# n = len(array)
+# while i<n:
+#     print(array[i])
+#     i += 1
 
+nums = [2, 2, 1, 1]
+
+print("Your Answer is ", reduce(equal, nums))
+print()
