@@ -2,11 +2,9 @@
   "name": "babel",
   "version": "1.0.0",
   "main": "index.js",
-  
   "scripts": {
-    "build": "babel index.js --out-dir prd",
-    "start": "npm run build && nodemon index.js",
-    "serve": "node prd/index.js"
+    "start": "babel src -w --out-dir prd",
+    "dev": "nodemon prd/index.js"
   },
   "keywords": [],
   "author": "",
@@ -21,4 +19,5 @@
   "dependencies": {
     "express": "^4.21.2"
   }
+  
 }
