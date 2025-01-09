@@ -1,0 +1,20 @@
+.fonts {
+    font-family: "Montserrat";
+}
+
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0px;
+}
+
+.center{
+    margin: 300px 0px;
+    /* border: 2px solid red; */
+    /* width: fit-content; */
+    font-size: 2rem;
+    /* margin: auto; */
+    /* align-self: center; */
+    text-align: center;
+}
