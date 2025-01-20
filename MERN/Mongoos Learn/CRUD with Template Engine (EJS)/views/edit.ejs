@@ -1,0 +1,29 @@
+<%- include ('./partials/header.ejs')%>
+<form method="post" action="/edit/<%= data._id %>" class="d-flex justify-content-center align-self-center flex-column" style="padding: 24px; width: 50%; gap: 30px; border-radius: 24px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);">
+    <h3 class="align-self-center">Edit A Student in your School</h3>
+    <div class="d-flex flex-column" style="gap: 10;">
+        <p style="margin-bottom: 6px;">Name</p>
+        <input type="text" class="form-control" name="name" value="<%= data.name%>" id="exampleInput" placeholder="Write Student Name">
+    </div>
+    <div class="d-flex flex-column" style="gap: 10;">
+        <p style="margin-bottom: 6px;">Age</p>
+        <input type="number" class="form-control" name="age" value="<%= data.age%>" id="exampleInput" placeholder="Write Student Age">
+    </div>
+    <div class="d-flex flex-column" style="gap: 10;">
+        <p style="margin-bottom: 6px;">Hobby</p>
+        <input type="text" class="form-control" name="hobby" value="<%= data.hobby%>" id="exampleInput" placeholder="Write Student Hobby">
+    </div>
+    <div class="d-flex flex-column" style="gap: 10;">
+        <p style="margin-bottom: 6px;">Class</p>
+        <input type="text" class="form-control" name="myclass" value="<%=data.class%>" id="exampleInput" placeholder="Write Student Class">
+    </div>
+    <div class="d-flex flex-column" style="gap: 10;">
+        <p style="margin-bottom: 6px;">Addmission Date</p>
+        <input type="datetime-local" class="form-control" name="addmission_date" value="<%= data.addmission_date %>" id="exampleInput" placeholder="Write student Addmission Date">
+    </div>
+    <div class="d-flex justify-content-center" style="gap: 24px;">
+        <button type="submit" class="btn btn-success" style="min-width: 150px;">Update</button>
+        <a href="/"><button class="btn btn-outline-success" style="min-width: 150px;">Cancel And Back</button></a>
+    </div>
+</form>
+<%- include ('./partials/footer.ejs')%>

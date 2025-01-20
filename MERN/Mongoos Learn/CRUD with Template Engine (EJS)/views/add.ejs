@@ -1,0 +1,31 @@
+<%- include ('./partials/header.ejs')%>
+
+<form method="post" action="/add" class="d-flex justify-content-center align-self-center flex-column" style="padding: 24px; width: 50%; gap: 30px; border-radius: 24px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);">
+    <h3 class="align-self-center">Add A Student in your School</h3>
+    <div class="d-flex flex-column" style="gap: 10;">
+        <p style="margin-bottom: 6px;">Name</p>
+        <input type="text" class="form-control", id="name" name="name" placeholder="Write Student Name">
+    </div>
+    <div class="d-flex flex-column" style="gap: 10;">
+        <p style="margin-bottom: 6px;">Age</p>
+        <input type="number" class="form-control", id="age" name="age" placeholder="Write Student Age">
+    </div>
+    <div class="d-flex flex-column" style="gap: 10;">
+        <p style="margin-bottom: 6px;">Hobby</p>
+        <input type="text" class="form-control" id="hobby" name="hobby" placeholder="Write Student Hobby">
+    </div>
+    <div class="d-flex flex-column" style="gap: 10;">
+        <p style="margin-bottom: 6px;">Class</p>
+        <input type="text" class="form-control" id="class" name="myclass" placeholder="Write Student Class">
+    </div>
+    <div class="d-flex flex-column" style="gap: 10;">
+        <p style="margin-bottom: 6px;">Addmission Date</p>
+        <input type="datetime-local" class="form-control" id="addmission_date" name="addmission_date"  placeholder="Write student Addmission Date">
+    </div>
+    <div class="d-flex justify-content-center" style="gap: 24px;">
+        <button type="submit" class="btn btn-success" style="min-width: 150px;">Create</button>
+        <button class="btn btn-outline-success" style="min-width: 150px;">Back To Home</button>
+    </div>
+</form>
+
+<%- include ('./partials/footer.ejs')%>

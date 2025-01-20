@@ -22,7 +22,6 @@ app.set('view engine', 'handlebars');
 app.use('/', blogRoute)
 app.use('/blog', blogRoute)
 app.use('/blogpage/:slug', blogRoute)
-
 // app.get('/blog', import(path.join(__dirname, 'routes/MyBlog.js')))
 
 // app.get('/blogpage/:slug', import(path.join(__dirname, 'routes/MyBlog.js')))

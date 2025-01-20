@@ -1,0 +1,56 @@
+body{
+    display: flex;
+    /* flex-direction: column; */
+    border: 2px solid red;
+    align-content: center;
+    height: 100vh;
+    justify-content: center;
+}
+
+.head-options{
+    width: 100px;
+    color: white;
+}
+
+.insiders{
+    width: 100px;
+}
+
+.actions{
+    display: flex;
+    gap: 20px;
+}
+
+.list-head{
+    gap: 30px;
+    background-color: rgb(39, 195, 11);
+    padding: 10px 24px;
+    border-radius: 12px 12px 0 0;
+}
+
+.StudentList{
+    gap: 30px;
+    padding: 10px 24px;
+    border-radius: 12px;
+}
+
+.fonts {
+    font-family: "Montserrat";
+}
+
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0px;
+}
+
+.center{
+    margin: 300px 0px;
+    /* border: 2px solid red; */
+    /* width: fit-content; */
+    font-size: 2rem;
+    /* margin: auto; */
+    /* align-self: center; */
+    text-align: center;
+}

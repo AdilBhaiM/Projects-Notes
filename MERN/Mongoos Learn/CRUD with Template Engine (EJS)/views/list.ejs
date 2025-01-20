@@ -1,0 +1,40 @@
+<%- include ('./partials/header.ejs')%>
+<div class="d-flex justify-content-center align-self-center flex-column" style="padding: 24px; width: 50%; gap: 14px; border-radius: 24px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);">
+    
+    <div class="d-flex justify-content-between" style="gap: 24px;">
+        <h3 class="align-self-center">All of the Students</h3>
+        <a href="/add"><button class="btn btn-outline-success" style="min-width: 150px;">Add A New One</button></a>
+    </div>
+    <list class="Student" style="background-color: rgba(0, 0, 0, 0.048); border-radius: 0 0 12px 12px;">
+        <ul class="list-unstyled d-flex list-head">
+            <li class="head-options">Name</li>
+            <li class="head-options">Age</li>
+            <li class="head-options">Hobby</li>
+            <li class="head-options">Class</li>
+            <li style="width: 200px; color: white;">Addmission Date</li>
+            <li class="head-options">Actions</li>
+        </ul>
+        <%  data.forEach((item)=>{ %>
+            <ul class="list-unstyled d-flex StudentList">
+                <li class="insiders"><%= item.name %></li>
+                <li class="insiders"><%= item.age %></li>
+                <li class="insiders"><%= item.hobby %></li>
+                <li class="insiders"><%= item.class %></li>
+                <li style="width: 200px; color: black;">
+                    <%= new Date(item.addmission_date).toLocaleDateString('en-US', { 
+                        year: 'numeric', 
+                        month: 'short', 
+                        day: '2-digit' 
+                    })%>
+                </li>
+                <li class="insiders actions">
+                    <form action="/edit/<%= item.id %>" method="get" ><button type="submit" style="border: 0;"><i class="fa-regular fa-pen-to-square"></i></button></form>
+                    <form action="/delete/<%= item.id %>" method="post"><button type="submit" style="border: 0;"><i class="fa-solid fa-delete-left"></i></button></form>
+                    
+                </li>
+            </ul>
+        <% }) %>
+    </list>
+    
+</div>
+<%- include ('./partials/footer.ejs')%>
