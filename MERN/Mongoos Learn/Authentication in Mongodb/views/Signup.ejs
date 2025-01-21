@@ -4,19 +4,22 @@
     <h3 class="align-self-left">Welcome! Sign Up to continue</h3>
     <div class="d-flex flex-column" style="gap: 10;">
         <p style="margin-bottom: 6px;">Your Name</p>
-        <input type="text" class="form-control" name="name" id="exampleInput" placeholder="john Doe">
+        <input type="text" class="form-control" name="name" id="exampleInput" placeholder="john Doe" required>
     </div>
     <div class="d-flex flex-column" style="gap: 10;">
         <p style="margin-bottom: 6px;">Email Address</p>
-        <input type="email" class="form-control" name="email" id="exampleInput" placeholder="john@example.com">
+        <input type="email" class="form-control" name="email" id="exampleInput" placeholder="john@example.com" required>
     </div>
     <div class="d-flex flex-column" style="gap: 10;">
         <p style="margin-bottom: 6px;">Password</p>
-        <input type="password" class="form-control" name="password" id="exampleInput" placeholder="john.4321">
+        <input type="password" class="form-control" name="password" id="exampleInput" placeholder="john.4321" required>
     </div>
     <div class="d-flex flex-column" style="gap: 10;">
         <p style="margin-bottom: 6px;">Confirm Password</p>
-        <input type="confirm-password" class="form-control" name="confirm password" id="exampleInput" placeholder="john.4321">
+        <input type="password" class="form-control" name="confirm_password" id="exampleInput" placeholder="john.4321" required>
+        <% if(passError == 1){ %>
+            <p style="align-self: flex-end; color: red;">Password doesn't match.</p>
+        <% } %>
     </div>
     <div class="d-flex flex-column justify-content-center" style="gap: 24px;">
         <button type="submit" class="btn btn-success" style="min-width: 150px;">Sign Up</button>
