@@ -1,0 +1,17 @@
+.footer .footer-txt{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.footer-txt h3{
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.TOC{
+    display: flex;
+    flex: 1;
+    gap: 24px;
+    justify-content: end;
+}

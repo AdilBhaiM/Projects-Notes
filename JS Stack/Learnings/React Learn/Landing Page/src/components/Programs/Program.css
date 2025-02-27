@@ -1,0 +1,83 @@
+.programs{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.texts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.texts h1{
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #212EA0;
+}
+
+.texts p{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.cards{
+    /* max-width: 80%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.card{
+    /* width: 31%; */
+    flex: 1;
+    position: relative;
+    cursor: pointer;
+    /* border: 2px solid red; */
+
+}
+
+.card img{
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+.card .hovered{
+    position: absolute;
+    /* width: 100%;
+    height: 100%; */
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    padding: 200px 20px 20px 20px;
+    border-radius: 10px;
+    gap: 16px;
+    opacity: 0;
+    flex-direction: column;
+    color: #fff;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    /* border: 2px solid red; */
+    background: rgba(0, 15, 152, 0.3);
+    transition: all 0.4s;
+}
+
+.card .hovered img{
+    width: 60px;
+}
+
+.card:hover .hovered{
+    opacity: 1;
+    z-index: 1;
+    padding: 20px;
+    /* top: 0; */
+}

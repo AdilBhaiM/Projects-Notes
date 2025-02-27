@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>My Axios</title>
+</head>
+<body>
+    <form class="Main_con">
+        <header class="head_txt">Currency Convertor</header>
+        <!-- Selectors -->
+        <div class="selectors_main">
+              <!-- From Currency -->
+            <div class="From_main">
+                <label for="from">From</label>
+                <div class="dropdown">
+                    <img id="fromFlag" src="https://flagsapi.com/US/flat/64.png"/>
+                    <select name="from" id="from">
+                        <!-- <option value="PKR">PKR</option>
+                        <option value="INR">INR</option>
+                        <option value="USD" selected>USD</option>
+                        <option value="EUR">EUR</option> -->
+                    </select>
+                </div>
+            </div>
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                <!-- To Currency -->
+            <div class="To_main">
+                <label for="to">To</label>
+                <div class="dropdown">
+                    <img id="toFlag" src="https://flagsapi.com/PK/flat/64.png"/>
+                    <select name="to" id="to">
+                        <!-- <option value="PKR">PKR</option>
+                        <option value="INR">INR</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option> -->
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- Total Amount -->
+        <div class="amount_con">
+            <label for="inp">Total Amount</label>
+            <input type="number" name="Total Amount" id="inp" placeholder="Total Amount">
+        </div>
+        <!-- Exchanged Amount -->
+        <div class="amount_con">
+            <label for="Exchange">Exchanged Amount</label>
+            <input type="number" name="Exchanged Amount" id="Exchange" placeholder="Exchanged Amount" value="0" disabled>
+        </div>
+        <button type="submit" id="btn">Exchange</button>
+    </form>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./Country_codes.js"></script>
+<script src="./index.js"></script>
+<!-- <script src="./index.js"></script> -->
+</html>

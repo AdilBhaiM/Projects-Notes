@@ -1,0 +1,18 @@
+
+.texts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.texts h1{
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #212EA0;
+}
+
+.texts p{
+    font-size: 2rem;
+    font-weight: 700;
+}

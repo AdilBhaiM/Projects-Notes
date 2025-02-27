@@ -1,0 +1,112 @@
+.navbar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 10;
+    align-items: center;
+    padding: 10px 9rem;
+}
+
+.dark-nav{
+    background-color: #212EA0;
+    transition: 0.3s;
+}
+
+.nav_btns{
+    display: flex;
+    gap: 32px;
+}
+
+.nav_btns button{
+    font-size: 16px;
+    padding: 12px 24px;
+    height: fit-content;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+.navbar img{
+    height: 37px;
+    align-self: center;
+}
+
+.links{
+    display: flex;
+    gap: 42px;
+    align-items: center;
+}
+
+.link{
+    font-size: 16px;
+    color: white;
+    position: relative;
+}
+
+.link::after{
+    content: '';
+    background-color: rgb(255, 255, 255);
+    width: 0px;
+    height: 3px;
+    position: absolute;
+    border-radius: 100px;
+    /* margin: auto; */
+    left: 0;
+    bottom: -6px;
+    transition: all 0.2s;
+}
+
+.link:hover::after{
+    width: 100%;
+}
+
+.menu_icon{
+    display: none;
+    position: fixed;
+    width: 32px;
+    top: 16px;
+    right: 32px;
+    max-height: 24px;
+    cursor: pointer;
+}
+
+/* ----------------   Media Query ----------------- */
+
+@media (max-width : 1200px){
+    .navbar{
+        padding: 12px 3.6rem;
+    }
+    .links{
+        gap: 32px;
+    }
+}
+
+@media (max-width : 1000px){
+    .nav_btns{
+        position: fixed;
+        flex-direction: column;
+        right: -250px;
+        top: 0;
+        width: 250px;
+        background-color: #1d2fcdd7;
+        height: 100vh;
+        padding: 70px 30px;
+        transition: all 0.3s;
+    }
+    .links{
+        flex-direction: column;
+        align-items: start;
+    }
+    .links .link{
+        font-size: 20px;
+    }
+    .nav_btns button{
+        width: 100%;
+    }
+    .menu_icon{
+        display: block;
+    }
+}
+

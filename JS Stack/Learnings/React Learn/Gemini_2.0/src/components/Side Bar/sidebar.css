@@ -1,0 +1,163 @@
+
+/* Classes ---------------------------------------------------------------- */ 
+
+.sidebar_main img{
+    width: 24px;
+    height: 24px;
+}
+
+.sidebar_main .btn img{
+    width: 20px;
+    height: 26px;
+}
+
+.sidebar_main .btn{
+    display: flex;
+    padding: 12px 24px;
+    gap: 14px;
+    box-shadow: 0px 0px 24px 2px #0000000f;
+    cursor: pointer;
+    border-radius: 120px;
+}
+
+.btn_txt{
+    position: relative;
+    /* display: block; */
+    align-self: center;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 1s;
+}
+
+/* Sidebar Main ---------------------------------------------------------------- */ 
+
+.sidebar_main{
+    min-height: 100vh;
+    /* min-width: 300px; */
+    background-color: #f0f4f9;
+    overflow-x: hidden;
+    padding: 16px;
+    /* border: 2px solid #f4f4f4; */
+    box-shadow: 0px 0px 24px -1px #0000000f;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 34px;
+    transition: all 0.2s;
+}
+
+
+/* Header ---------------------------------------------------------------- */ 
+
+.sidebar_main .header{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+/* Section ---------------------------------------------------------------- */ 
+
+.sidebar_main .chats_main{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+    flex-grow: 1;
+}
+
+.sidebar_main .All_chats{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 1;
+}
+
+.sidebar_main .heading_txt{
+    margin-left: 20px;
+    font-weight: 400;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
+}
+
+
+/* Open Chat ---------------------------------------------------------------- */ 
+
+.sidebar_main .chats{
+    display: flex;
+    /* border: 2px solid rgb(239, 239, 239); */
+    cursor: pointer;
+    border-radius: 120px;
+    gap: 16px;
+    padding: 14px 24px;
+    transition: all 0.3s;
+    /* transition: all 2s ease-in-out; */
+}
+
+.sidebar_main .chats_icon, .sidebar_main .Chats_txt{
+    opacity: 0.5;
+    align-self: center;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* Footer ---------------------------------------------------------------- */ 
+
+.sidebar_main .footer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    padding: 20px 16px;
+    overflow-x: hidden;
+}
+
+.sidebar_main .btn_foot{
+    display: flex;
+    gap: 16px;
+    /* min-width: 200px; */
+    cursor: pointer;
+    border-radius: 120px;
+}
+
+.foot_img{
+    display: block;
+    transition: transform 0.3s ease
+}
+
+.btn_txt::after{
+    content: '';
+    background-color: black;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all 0.2s;
+}
+
+
+/* Hover on buttons ---------------------------------------------------------------- */ 
+
+.btn_foot:hover .foot_img{
+    transform: rotate(-20deg);
+}
+
+.btn_foot:hover .btn_txt::after{
+    width: 100%;
+}
+
+.chats:hover{
+    /* border: none; */
+    box-shadow: 0px 0px 24px 2px #0000000f;
+}
+
+.chats:hover .chats_icon, .chats:hover .Chats_txt{
+    /* border: none; */
+    opacity: 1;
+}
+

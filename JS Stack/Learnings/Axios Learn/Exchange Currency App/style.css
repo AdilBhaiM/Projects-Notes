@@ -1,0 +1,92 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    height: 99vh;
+    border: 2px solid red;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+}
+
+
+.Main_con{
+    align-self: center;
+    max-width: 500px;
+    display: flex;
+    padding: 24px;
+    gap: 24px;
+    border-radius: 24px;
+    background-color: white;
+    width: -webkit-fill-available;
+    flex-direction: column;
+}
+
+.head_txt{
+    font-size: 2rem;
+}
+
+.amount_con{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.selectors_main{
+    display: flex;
+    gap: 24px;
+    background-color: white;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.From_main, .To_main{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 12px;
+}
+
+.dropdown{
+    display: flex;
+    flex: 1;
+    gap: 8px;
+    padding:12px;
+    border: 2px solid lightgrey;
+    border-radius: 12px;
+}
+
+select{
+    flex: 1;    
+    border: none;
+    background-color: none;
+    font-size: 1rem;
+}
+
+input{
+    border-radius: 12px;
+    border: 2px solid lightgrey;
+    height: 30px;
+    padding: 10px 14px;
+    font-size: 1.2rem;
+}
+
+img{
+    max-width: 2rem;
+}
+
+i{
+    align-self:center;
+}
+
+button{
+    height: 40px;
+    color:rgb(225, 140, 30);
+    cursor: pointer;
+    background-color: antiquewhite;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: 1px solid lightgrey;
+}
