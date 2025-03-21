@@ -91,10 +91,11 @@ export const updateProfile = async (req, res) => {
     if (!fullName)
       return res.status(400).json({ message: "Please Provide a Full Name" });
     const userId = req.user._id;
-    const user = await User.findById(userId)
+    const user = await User.findById(userId);
     const uploadedImage = await cloudinary.uploader.upload(profilePic);
-    const updatedUser = await User.findByIdAndUpdate( userId,
-      { profilePic: (await uploadedImage).secure_url , fullName: fullName },
+    const updatedUser = await User.findByIdAndUpdate(
+      userId,
+      { profilePic: uploadedImage.secure_url, fullName: fullName },
       { new: true }
     );
     res.status(201).json(updatedUser);

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ChatHeader from "../CHatHeader";
 import ChatsContainer from "../ChatsContainer.jsx";
 import MessageSkeleton from "../Skeletons/ChatsLoader";
-import { chatStore } from "../../store/ChatStore";
 import InputMessage from "../InputMessage";
 
 const Chats = () => {

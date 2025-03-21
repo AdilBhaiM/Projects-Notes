@@ -13,7 +13,7 @@ function App() {
   const { authUser, checkAuth, onlineUsers } = authStore();
 
   // console.log({onlineUsers});
-  
+
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);

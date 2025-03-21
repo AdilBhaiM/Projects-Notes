@@ -28,7 +28,8 @@ export const getMessages = async (req, res) => {
         { senderID: currUserID, receiverID: currChatUserID },
       ],
     });
-
+    // const AllMessages = await Message.find({User : id});
+    
     res.status(201).json({ AllMessages });
   } catch (error) {
     console.log("Error in fetching all messages : " + error.message);

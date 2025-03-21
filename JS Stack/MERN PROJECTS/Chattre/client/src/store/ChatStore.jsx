@@ -63,7 +63,7 @@ export const chatStore = create((set, get) => ({
     console.log(socket.id)
     socket.on("newMessage", (newMessage) => {
         console.log(newMessage);
-        set({messages: [...get().messages, newMessage]})
+        set({messages: [...get().messages.filter((message) => message._id !== newMessage._id), newMessage]})
     })
   },
   stopListeningMessages: () => {
