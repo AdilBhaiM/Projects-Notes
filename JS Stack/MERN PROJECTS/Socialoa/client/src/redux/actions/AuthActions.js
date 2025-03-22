@@ -29,7 +29,7 @@ export const Signup = (data) => {
         payload: res.data.user,
       });
 
-      
+
       if(res){
         toast.error("You've Signed Up successfully.")
       }
@@ -37,6 +37,7 @@ export const Signup = (data) => {
       console.log("Signup Action Error: ", error);
       toast.error(error.response.data.message)
     }
+    
   };
 };
 
