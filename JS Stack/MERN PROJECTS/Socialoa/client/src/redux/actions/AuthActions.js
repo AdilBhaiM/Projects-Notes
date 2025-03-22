@@ -28,6 +28,8 @@ export const Signup = (data) => {
         type: "SIGNUP",
         payload: res.data.user,
       });
+
+      
       if(res){
         toast.error("You've Signed Up successfully.")
       }
