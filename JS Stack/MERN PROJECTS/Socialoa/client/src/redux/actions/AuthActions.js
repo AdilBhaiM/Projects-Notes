@@ -10,6 +10,9 @@ export const Login = (data) => {
         type: "LOGIN",
         payload: res.data.user,
       });
+      if(res){
+        toast.error("You've logged In successfully.")
+      }
     } catch (error) {
       console.log("Login Action Error: ", error);
     }
@@ -21,21 +24,26 @@ export const Signup = (data) => {
     try {
       const res = await axiosInstance.post("/auth/signup", data);
       console.log(res);
-      return({
+      dispatch({
         type: "SIGNUP",
         payload: res.data.user,
       });
+      if(res){
+        toast.error("You've Signed Up successfully.")
+      }
     } catch (error) {
       console.log("Signup Action Error: ", error);
-      toast.error(error.message)
+      toast.error(error.response.data.message)
     }
   };
 };
 
-export const Logout = (data) => {
+export const Logout = () => {
   return async (dispatch) => {
     try {
+      console.log("hello");
       const res = await axiosInstance.post("/auth/logout");
+      console.log(res);
       dispatch({
         type: "LOGOUT",
         payload: null,
@@ -46,11 +54,18 @@ export const Logout = (data) => {
   };
 };
 
-export const setUser = (data) => {
-  return {
-    type: "SET_USER",
-    payload: data,
+export const CheckAuth = () => {
+  return async (dispatch) => {
+    try {
+      const res = await axiosInstance.get("/auth/check");
+      // console.log(res);
+      console.log(res.data);
+      dispatch({
+        type: "SET_USER",
+        payload: res.data,
+      });
+    } catch (error) {
+      console.log("CheckAuth Action Error: ", error);
+    }
   };
-
-  
 };

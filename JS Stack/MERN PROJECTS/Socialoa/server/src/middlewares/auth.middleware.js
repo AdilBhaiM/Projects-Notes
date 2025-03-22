@@ -9,11 +9,13 @@ export const protectedRoute = async (req, res, next) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     if (!decoded)
       return res.status(401).json({ message: "Unauthorized -- Invalid Token" });
+    // console.log(decoded.userId);
     const user = await User.findById(decoded.userId).select("-password");
+    if (!user) return res.status(401).json({ message: "User Not Fond" });
     req.user = user;
     next();
   } catch (error) {
-    console.log("Error in ProtectedRoute Middleware", error);
+    console.log("Error in ProtectedRoute Middleware", error.message);
     return res.status(500).json({ message: "Internal Server Error -- Protected route Error" });
   }
 };

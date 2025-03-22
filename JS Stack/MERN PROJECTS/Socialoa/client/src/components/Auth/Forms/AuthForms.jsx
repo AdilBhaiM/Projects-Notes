@@ -9,7 +9,7 @@ const AuthForm = ({ isLogin, isLoggingIn }) => {
   const fname = useRef();
   const lname = useRef();
 
-  const user = useSelector((state) => state.auth.authUser);
+  // const {authUser} = useSelector((state) => state.auth);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -17,18 +17,14 @@ const AuthForm = ({ isLogin, isLoggingIn }) => {
     password: "",
     confirmPassword: "",
   });
-  console.log(user);
+  // console.log(authUser);
 
   const validateInputs = () => {
     if (isLogin) {
       if (formData.email && formData.password) {
-        if (formData.password == formData.confirmPassword) {
-          return true;
-        } else {
-          toast.error("Password doesn't match");
-          return false;
-        }
+        return true;
       } else {
+        toast.error("Please fill out all fields");
         return false;
       }
     } else {
@@ -40,19 +36,25 @@ const AuthForm = ({ isLogin, isLoggingIn }) => {
         formData.confirmPassword
       ) {
         if (formData.password == formData.confirmPassword) {
-          return true;
+          if (formData.password.length > 5) {
+            return true;
+          } else {
+            toast.error("Password must be at least 6 digit");
+            return false;
+          }
         } else {
           toast.error("Password doesn't match");
           return false;
         }
       } else {
+        toast.error("Please fill out all fields");
         return false;
       }
     }
   };
 
   const submitHandle = (e) => {
-    debugger;
+    // debugger;
     e.preventDefault();
     const isValid = validateInputs();
     if (!isValid) return;
@@ -78,9 +80,6 @@ const AuthForm = ({ isLogin, isLoggingIn }) => {
       );
     }
   };
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
 
   useEffect(() => {
     if (isLogin) {
@@ -114,11 +113,11 @@ const AuthForm = ({ isLogin, isLoggingIn }) => {
         <div ref={fname} className="flex flex-col max-w-full gap-3">
           <div className="h-12 relative flex rounded-xl">
             <input
-              required
               value={formData.firstName}
               onChange={(e) =>
                 setFormData({ ...formData, firstName: e.target.value })
               }
+              name="firstName"
               className="peer w-full text-white text-[14px] outline-none px-4 rounded-xl bg-black valid:bg-transparent valid:ring-1 valid:ring-[#5ef882] focus:bg-transparent focus:ring-2 focus:ring-[#ffffff]"
               id="first"
               type="text"
@@ -136,8 +135,8 @@ const AuthForm = ({ isLogin, isLoggingIn }) => {
         <div ref={lname} className="flex flex-col max-w-full gap-3">
           <div className="h-12 relative flex rounded-xl">
             <input
-              required
               value={formData.lastName}
+              name="lastName"
               onChange={(e) =>
                 setFormData({ ...formData, lastName: e.target.value })
               }
@@ -158,11 +157,11 @@ const AuthForm = ({ isLogin, isLoggingIn }) => {
         <div className="flex flex-col w-full gap-3">
           <div className="h-12 relative flex rounded-xl">
             <input
-              required
               value={formData.email}
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
               }
+              name="email"
               className="peer w-full text-white text-[14px] outline-none px-4 rounded-xl bg-black valid:bg-transparent valid:ring-1 valid:ring-[#5ef882] invalid:bg-transparent invalid:ring-1 invalid:ring-red-600 focus:bg-transparent focus:ring-2 focus:ring-[#ffffff]"
               id="email"
               type="email"
@@ -180,11 +179,11 @@ const AuthForm = ({ isLogin, isLoggingIn }) => {
         <div className="flex flex-col w-full gap-3">
           <div className="h-12 relative flex rounded-xl">
             <input
-              required
               value={formData.password}
               onChange={(e) =>
                 setFormData({ ...formData, password: e.target.value })
               }
+              name="password"
               className="peer w-full text-white text-[14px] outline-none px-4 rounded-xl bg-black valid:bg-transparent valid:ring-1 valid:ring-[#5ef882] focus:bg-transparent focus:ring-2 focus:ring-[#ffffff]"
               id="new"
               type="password"
@@ -205,7 +204,7 @@ const AuthForm = ({ isLogin, isLoggingIn }) => {
         >
           <div className="h-12 relative flex rounded-xl">
             <input
-              required
+              name="confirmPassword"
               value={formData.confirmPassword}
               onChange={(e) =>
                 setFormData({ ...formData, confirmPassword: e.target.value })
@@ -214,6 +213,7 @@ const AuthForm = ({ isLogin, isLoggingIn }) => {
               id="confirm"
               type="Password"
             />
+
             <label
               className="absolute top-1/2 translate-y-[-50%] text-[#a9a9a9] left-4 px-2 peer-focus:top-0 peer-focus:left-3 font-light text-base peer-focus:text-sm peer-focus:text-[#fff] peer-valid:top-[-4px] peer-focus:bg-gray-900 peer-valid:bg-gray-900 peer-valid:left-3 peer-valid:text-sm peer-valid:text-[#5ef882] invalid:text-red-500 duration-150"
               htmlFor="confirm"
