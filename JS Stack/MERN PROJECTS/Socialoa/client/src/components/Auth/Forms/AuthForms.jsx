@@ -39,7 +39,7 @@ const AuthForm = ({ isLogin, isLoggingIn }) => {
           if (formData.password.length > 5) {
             return true;
           } else {
-            toast.error("Password must be at least 6 digit");
+            toast.error("Password must be at least 6 digits long");
             return false;
           }
         } else {

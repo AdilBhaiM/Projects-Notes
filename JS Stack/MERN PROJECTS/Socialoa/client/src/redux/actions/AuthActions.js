@@ -11,7 +11,7 @@ export const Login = (data) => {
         payload: res.data.user,
       });
       if(res){
-        toast.error("You've logged In successfully.")
+        toast.success("You've logged In successfully.")
       }
     } catch (error) {
       console.log("Login Action Error: ", error);
@@ -31,13 +31,13 @@ export const Signup = (data) => {
 
 
       if(res){
-        toast.error("You've Signed Up successfully.")
+        toast.success("You've Signed Up successfully.")
       }
     } catch (error) {
       console.log("Signup Action Error: ", error);
       toast.error(error.response.data.message)
     }
-    
+
   };
 };
 
@@ -51,6 +51,9 @@ export const Logout = () => {
         type: "LOGOUT",
         payload: null,
       });
+      if(res){
+        toast.success("You've Logged Out successfully.")
+      }
     } catch (error) {
       console.log("Logout Action Error: ", error);
     }
