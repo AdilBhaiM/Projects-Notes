@@ -237,6 +237,7 @@ const AuthForm = ({ isLogin, isLoggingIn }) => {
             {isLogin ? "Sign Up" : "Log In"}
           </h1>
         </div>
+        
       </form>
     </div>
   );

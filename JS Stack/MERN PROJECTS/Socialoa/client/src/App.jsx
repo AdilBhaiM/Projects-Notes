@@ -8,6 +8,9 @@ import { CheckAuth } from "./redux/actions/AuthActions";
 import VerifyEmail from "./components/Auth/Forms/VerifyEmail";
 import ResetPassword from "./components/Auth/Forms/ResetPassword";
 import AuthForm from "./components/Auth/Forms/AuthForms";
+import ScheduledPosts from "./components/Dashoard/ScheduledPosts";
+import HomePage from "./components/Dashoard/HomePage";
+import Analytics from "./components/Dashoard/Analytics";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,7 +35,11 @@ function App() {
         <Route
           path="/"
           element={authUser ? <Dashboard /> : <Navigate to="/authentication" />}
-        />
+        >
+          <Route path="dashboard" element={<HomePage />}/>
+          <Route path="schedule_post" element={<ScheduledPosts />}/>
+          <Route path="analytics" element={<Analytics />}/>
+        </Route>
       </Routes>
       <Toaster />
     </>

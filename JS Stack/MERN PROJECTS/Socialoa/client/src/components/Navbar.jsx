@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div className="flex fixed w-full">
 
-    <div className="bg-gray-900 ml-[300px] shadow-md shadow-gray-700/30  max-h-28 flex flex-1 items-center justify-between px-4 py-2">
+    <div className="bg-gray-900 ml-[300px] shadow-md shadow-gray-700/30  min-h-[80px] flex flex-1 items-center justify-between px-4 py-2">
       {/* <!-- Left Section --> */}
       <div className="flex-1">
         <a className="text-xl text-white font-thin">Socialoa</a>
