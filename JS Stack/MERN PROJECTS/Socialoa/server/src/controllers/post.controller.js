@@ -16,6 +16,7 @@ export const createPost = async (res, req) => {
                 scheduleDate
             }
         })
+        
     } catch (error) {
         
     }
