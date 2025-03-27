@@ -11,6 +11,7 @@ import AuthForm from "./components/Auth/Forms/AuthForms";
 import ScheduledPosts from "./components/Dashoard/ScheduledPosts";
 import HomePage from "./components/Dashoard/HomePage";
 import Analytics from "./components/Dashoard/Analytics";
+import Error from "./pages/404Error";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,22 +25,26 @@ function App() {
   return (
     <>
       <Routes>
-        <Route
-          path="/authentication"
-          element={!authUser ? <AuthPage /> : <Navigate to="/" />}
-        >
-          <Route path="" element={<AuthForm />} />
+        {/* Protected Routes */}
+        <Route path="/" element={authUser ? <Navigate to="/dashboard" /> : <Navigate to="/authentication" />} />
+
+
+        {/* Authentication Routes */}
+        <Route path="/authentication" element={!authUser ? <AuthPage /> : <Navigate to="/dashboard" />}>
+          <Route index element={<AuthForm />} />
           <Route path="verification" element={<VerifyEmail />} />
           <Route path="reset-pwd" element={<ResetPassword />} />
         </Route>
-        <Route
-          path="/"
-          element={authUser ? <Dashboard /> : <Navigate to="/authentication" />}
-        >
-          <Route path="dashboard" element={<HomePage />}/>
-          <Route path="schedule_post" element={<ScheduledPosts />}/>
-          <Route path="analytics" element={<Analytics />}/>
+
+        {/* Dashboard Routes */}
+        <Route path="/" element={authUser ? <Dashboard /> : <Navigate to="/authentication" />}>
+          <Route path="dashboard" element={authUser ? <HomePage /> : <Navigate to="/authentication"/>} />
+          <Route path="schedule_post" element={authUser ? <ScheduledPosts /> : <Navigate to="/authentication" />} />
+          <Route path="analytics" element={authUser ? <Analytics /> : <Navigate to="/authentication" />} />
         </Route>
+
+        {/* 404 Page */}
+        <Route path="*" element={<Error/>} />
       </Routes>
       <Toaster />
     </>
