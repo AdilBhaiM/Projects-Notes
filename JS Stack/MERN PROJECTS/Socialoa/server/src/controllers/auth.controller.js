@@ -1,8 +1,11 @@
 import bycrypt from "bcryptjs";
 import User from "../models/user.model.js";
-import crypto from 'crypto'
+import crypto from "crypto";
 import { generateToken } from "../lib/utils.js";
-import { sendPasswordResetEmail, sendVerificationEmail } from "../mailTrap/emails.js";
+import {
+  sendPasswordResetEmail,
+  sendVerificationEmail,
+} from "../mailTrap/emails.js";
 
 // Signup controller ------------------------------
 
@@ -167,19 +170,22 @@ export const forgotPassword = async (req, res) => {
     return res.status(400).json({ message: "Email is required" });
   }
   try {
-    const user = await User.findOne({email});
+    const user = await User.findOne({ email });
     if (!user) {
       return res.status(400).json({ message: "User not found" });
     }
 
     // Generate reset token and send email
-    const resetToken = crypto.randomBytes(20).toString('hex');
+    const resetToken = crypto.randomBytes(20).toString("hex");
     const resetTokenExpiresAt = Date.now() + 1 * 60 * 60 * 1000;
     user.resetToken = resetToken;
     user.resetTokenExpiresAt = resetTokenExpiresAt;
-    
+
     // Sending Password Reset Link
-    sendPasswordResetEmail(email, `${process.env.CLIENT_URL}/reset-password/${resetToken}`);
+    sendPasswordResetEmail(
+      email,
+      `${process.env.CLIENT_URL}/reset-password/${resetToken}`
+    );
 
     await user.save();
     res.status(200).json({ message: "Password reset email sent" });
@@ -187,35 +193,36 @@ export const forgotPassword = async (req, res) => {
     console.log("Error in forgot password controller", error);
     res.status(500).json({ message: "Internal Server Error" });
   }
-}
+};
 
 // Reset password controller ------------------------------
 
 export const resetPassword = async (req, res) => {
-  const {token} = req.params;
-  const {password} = req.body;
+  const { token } = req.params;
+  const { password } = req.body;
   try {
     const user = await User.findOne({
       resetPasswordToken: token,
-      resetPasswordExpiresAt: {$gt: Date.now()}
-    })
-    if(!user) return res.status(400).json({
-      message: "Invalid Token"
-    })
+      resetPasswordExpiresAt: { $gt: Date.now() },
+    });
+    if (!user)
+      return res.status(400).json({
+        message: "Invalid Token",
+      });
 
     // Update Password
 
-    const hashedPassword = bycrypt.hash(password, 10)
+    const hashedPassword = bycrypt.hash(password, 10);
 
-    user.password = hashedPassword
-    user.resetPasswordExpiresAt = undefined
-    user.resetPasswordToken = undefined
-    await user.save()
+    user.password = hashedPassword;
+    user.resetPasswordExpiresAt = undefined;
+    user.resetPasswordToken = undefined;
+    await user.save();
   } catch (error) {
-    console.log('Error in reseting password : ', error);
+    console.log("Error in reseting password : ", error);
     res.status(500).json({ message: "Internal Server Error" });
   }
-}
+};
 
 // Check if user is logged in ------------------------------
 

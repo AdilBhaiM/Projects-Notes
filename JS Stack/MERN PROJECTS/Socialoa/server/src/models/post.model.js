@@ -1,25 +1,41 @@
 import mongoose from "mongoose";
 
-const PostSchema = new mongoose.Schema({
-  platform: {
-    type: String,
-    required: true,
-    trim: true,
+const PostSchema = new mongoose.Schema(
+  {
+    platforms: {
+      type: [String],
+      enum: ["Facebook", "Instagram", "LinkedIn"],
+      required: true,
+      default: [],
+      trim: true,
+    },
+    images: {
+      type: [String],
+      default: [],
+    },
+    status: {
+      type: String,
+      enum: ["Scheduled", "Draft"],
+      required: true,
+      trim: true,
+    },
+    caption: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    scheduleDate: {
+      type: Date,
+      default: Date.now,
+    },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
-  images: {
-    type: [Image],
-    default: [],
-  },
-  caption: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  scheduledDate: {
-    type: Date,
-    default: Date.now,
-  },
-});
+  { timestamps: true }
+);
 
 const Post = mongoose.model("Post", PostSchema);
 
