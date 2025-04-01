@@ -7,8 +7,11 @@ const validStatus = ["Scheduled", "Draft"];
 
 // Create Post
 export const createPost = async (req, res) => {
-  const { platforms, images, caption, status, scheduleDate, user } = req.body;
-  if (!platforms || !images[0] || !caption || !user)
+  const { platforms, images, caption, status, scheduleDate, user, isScheduled } = req.body;
+  if (isScheduled && isNaN(new Date(scheduleDate).getTime())) {
+    return res.status(400).json({ message: "Invalid scheduleDate format!" });
+  }
+  if (!platforms || !images[0] || !caption || !user || !isScheduled)
     return res.status(400).json({
       message: "Provide all required fields to proceed further!",
     });
@@ -37,16 +40,22 @@ export const createPost = async (req, res) => {
       user,
     });
 
-    if (status === validStatus[0]){
+    const localDate = new Date(scheduleDate);
+    const zuluTime = new Date(
+      localDate.getTime() - localDate.getTimezoneOffset() * 60000
+    ).toISOString();
+    console.log(zuluTime);
+
+    if (isScheduled) {
       uploadPost({
         post: caption,
         platforms: ["facebook"],
-        scheduleDate: scheduleDate,
-        mediaUrls: uploadedImages, 
-      })
+        scheduleDate: newDate,
+        mediaUrls: uploadedImages,
+      });
     }
     await NewPost.save();
-    
+
     return res.status(200).json({
       post: NewPost,
     });
@@ -158,5 +167,5 @@ export const getUserPosts = async (req, res) => {
 };
 
 export const uploadpost = async (req, res) => {
-  uploadPost()
-}
+  uploadPost();
+};

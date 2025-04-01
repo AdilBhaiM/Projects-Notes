@@ -1,10 +1,10 @@
-import mongoose from "mongoose";
+import mongoose, { trusted } from "mongoose";
 
 const PostSchema = new mongoose.Schema(
   {
     platforms: {
       type: [String],
-      enum: ["Facebook", "Instagram", "LinkedIn"],
+      enum: ["facebook", "instagram", "linkedIn"],
       required: true,
       default: [],
       trim: true,
@@ -27,6 +27,11 @@ const PostSchema = new mongoose.Schema(
     scheduleDate: {
       type: Date,
       default: Date.now,
+    },
+    isScheduled:{
+      type: Boolean,
+      required: true,
+      default: false
     },
     user: {
       type: mongoose.Schema.Types.ObjectId,
