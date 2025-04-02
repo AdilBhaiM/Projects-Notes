@@ -28,10 +28,10 @@ const PostSchema = new mongoose.Schema(
       type: Date,
       default: Date.now,
     },
-    isScheduled:{
+    isScheduled: {
       type: Boolean,
       required: true,
-      default: false
+      default: false,
     },
     user: {
       type: mongoose.Schema.Types.ObjectId,

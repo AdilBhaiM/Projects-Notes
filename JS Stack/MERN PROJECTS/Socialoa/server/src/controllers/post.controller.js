@@ -50,7 +50,6 @@ export const createPost = async (req, res) => {
       scheduleDate,
       user,
     });
-
     const localDate = new Date(scheduleDate);
     if (isNaN(localDate.getTime())) {
       return res.status(400).json({ message: "Invalid scheduleDate format!" });
@@ -62,7 +61,6 @@ export const createPost = async (req, res) => {
       uploadPost({
         post: caption,
         platforms: ["facebook"],
-        scheduleDate: zuluTime,
         mediaUrls: uploadedImages,
       });
     }
@@ -179,6 +177,11 @@ export const getUserPosts = async (req, res) => {
   }
 };
 
-export const uploadpost = async (req, res) => {
-  uploadPost();
-};
+// export const uploadpost = async (req, res) => {
+//   uploadPost({
+//     post: caption,
+//     platforms: ["facebook"],
+//     scheduleDate: zuluTime,
+//     mediaUrls: uploadedImages,
+//   });
+// };
