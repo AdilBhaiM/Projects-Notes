@@ -1,4 +1,5 @@
 import { uploadPost } from "../AyrShare/createPost.js";
+
 import cloudinary from "../lib/cloudinary.js";
 import Post from "../models/post.model.js";
 
@@ -7,15 +8,25 @@ const validStatus = ["Scheduled", "Draft"];
 
 // Create Post
 export const createPost = async (req, res) => {
-  const { platforms, images, caption, status, scheduleDate, user, isScheduled } = req.body;
-  if (isScheduled && isNaN(new Date(scheduleDate).getTime())) {
-    return res.status(400).json({ message: "Invalid scheduleDate format!" });
+  const {
+    platforms,
+    images,
+    caption,
+    status,
+    scheduleDate,
+    user,
+    isScheduled,
+  } = req.body;
+  if (isScheduled) {
+    const scheduledTime = scheduleDate ? new Date(scheduleDate) : new Date();
+    if (isNaN(scheduledTime.getTime())) {
+      return res.status(400).json({ message: "Invalid scheduleDate format!" });
+    }
   }
-  if (!platforms || !images[0] || !caption || !user || !isScheduled)
+  if (!platforms || !images[0] || !caption || !user)
     return res.status(400).json({
       message: "Provide all required fields to proceed further!",
     });
-
   if (!platforms.every((platform) => validPlatforms.includes(platform)))
     return res.status(401).json({
       message: "Platforma aren't valid",
@@ -41,19 +52,21 @@ export const createPost = async (req, res) => {
     });
 
     const localDate = new Date(scheduleDate);
-    const zuluTime = new Date(
-      localDate.getTime() - localDate.getTimezoneOffset() * 60000
-    ).toISOString();
-    console.log(zuluTime);
+    if (isNaN(localDate.getTime())) {
+      return res.status(400).json({ message: "Invalid scheduleDate format!" });
+    }
+    const zuluTime = localDate.toISOString();
+    console.log("Zulu Time:", zuluTime);
 
     if (isScheduled) {
       uploadPost({
         post: caption,
         platforms: ["facebook"],
-        scheduleDate: newDate,
+        scheduleDate: zuluTime,
         mediaUrls: uploadedImages,
       });
     }
+
     await NewPost.save();
 
     return res.status(200).json({
