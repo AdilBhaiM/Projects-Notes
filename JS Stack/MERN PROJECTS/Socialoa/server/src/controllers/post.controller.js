@@ -41,6 +41,8 @@ export const createPost = async (req, res) => {
         const resImage = await cloudinary.uploader.upload(image);
         return resImage.secure_url;
       })
+
+      
     );
     const NewPost = new Post({
       platforms,
