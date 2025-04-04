@@ -42,7 +42,7 @@ export const createPost = async (req, res) => {
         return resImage.secure_url;
       })
 
-      
+
     );
     const NewPost = new Post({
       platforms,
@@ -69,6 +69,8 @@ export const createPost = async (req, res) => {
 
     await NewPost.save();
 
+
+    
     return res.status(200).json({
       post: NewPost,
     });
