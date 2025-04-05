@@ -67,10 +67,13 @@ export const createPost = async (req, res) => {
       });
     }
 
-    await NewPost.save();
 
 
     
+    await NewPost.save();
+
+
+
     return res.status(200).json({
       post: NewPost,
     });
