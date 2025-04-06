@@ -17,12 +17,6 @@ export const createPost = async (req, res) => {
     user,
     isScheduled,
   } = req.body;
-  if (isScheduled) {
-    const scheduledTime = scheduleDate ? new Date(scheduleDate) : new Date();
-    if (isNaN(scheduledTime.getTime())) {
-      return res.status(400).json({ message: "Invalid scheduleDate format!" });
-    }
-  }
   if (!platforms || !images[0] || !caption || !user)
     return res.status(400).json({
       message: "Provide all required fields to proceed further!",
@@ -41,8 +35,6 @@ export const createPost = async (req, res) => {
         const resImage = await cloudinary.uploader.upload(image);
         return resImage.secure_url;
       })
-
-
     );
     const NewPost = new Post({
       platforms,
@@ -51,6 +43,7 @@ export const createPost = async (req, res) => {
       status,
       scheduleDate,
       user,
+      isScheduled
     });
     const localDate = new Date(scheduleDate);
     if (isNaN(localDate.getTime())) {
@@ -59,7 +52,7 @@ export const createPost = async (req, res) => {
     const zuluTime = localDate.toISOString();
     console.log("Zulu Time:", zuluTime);
 
-    if (isScheduled) {
+    if (status === validStatus[0]) {
       uploadPost({
         post: caption,
         platforms: ["facebook"],
@@ -67,13 +60,7 @@ export const createPost = async (req, res) => {
       });
     }
 
-
-
-    
     await NewPost.save();
-
-
-
     return res.status(200).json({
       post: NewPost,
     });
