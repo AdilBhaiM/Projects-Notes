@@ -16,6 +16,10 @@ const HomePage = () => {
           <p className='font-thin'>Draft Posts</p>
           <h1 className='text-2xl'>123</h1>
 
+
+
+          
+
           
         </div>
       </div>
