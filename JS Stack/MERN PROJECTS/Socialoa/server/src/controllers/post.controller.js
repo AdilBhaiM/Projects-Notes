@@ -36,21 +36,19 @@ export const createPost = async (req, res) => {
         return resImage.secure_url;
       })
     );
+    let localDate;
+    if (isScheduled) {
+      localDate = new Date(scheduleDate);
+    }
     const NewPost = new Post({
       platforms,
       images: uploadedImages,
       caption,
       status,
-      scheduleDate,
+      localDate,
       user,
-      isScheduled
+      isScheduled,
     });
-    const localDate = new Date(scheduleDate);
-    if (isNaN(localDate.getTime())) {
-      return res.status(400).json({ message: "Invalid scheduleDate format!" });
-    }
-    const zuluTime = localDate.toISOString();
-    console.log("Zulu Time:", zuluTime);
 
     if (status === validStatus[0]) {
       uploadPost({
