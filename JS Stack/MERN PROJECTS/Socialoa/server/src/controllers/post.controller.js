@@ -148,10 +148,9 @@ export const deletePost = async (req, res) => {
 
 // Get All posts of Current user
 export const getUserPosts = async (req, res) => {
-  const { id: UserId } = req.params;
   try {
     const allPosts = await Post.find({
-      user: UserId,
+      user: req.user._id,
     });
     if (!allPosts) {
       return res.status(404).json({

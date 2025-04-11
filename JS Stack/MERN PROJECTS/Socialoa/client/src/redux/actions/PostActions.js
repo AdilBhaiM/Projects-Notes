@@ -1,13 +1,14 @@
 import toast from "react-hot-toast";
 import { axiosInstance } from "../../lib/axiosInstance.js";
 
-export const Login = (data) => {
+// FOR GETTING ALL POSTS
+export const getAllPosts = () => {
   return async (dispatch) => {
     try {
-      const res = await axiosInstance.post("/auth/login", data);
+      const res = await axiosInstance.get("/post/allposts");
       console.log(res);
       dispatch({
-        type: "LOGIN",
+        type: "ALL_POSTS",
         payload: res.data.user,
       });
       if(res){
@@ -19,7 +20,8 @@ export const Login = (data) => {
   };
 };
 
-export const Signup = (data) => {
+// FOR CREATING A POST
+export const createPost = (data) => {
   return async (dispatch) => {
     try {
       const res = await axiosInstance.post("/auth/signup", data);
@@ -36,10 +38,12 @@ export const Signup = (data) => {
       toast.error(error.response.data.message)
     }
 
-  };
-};
+  }
+}
 
-export const Logout = () => {
+
+// FOR UPDATING A POST
+export const updatePost = () => {
   return async (dispatch) => {
     try {
       console.log("hello");
@@ -58,7 +62,25 @@ export const Logout = () => {
   };
 };
 
-export const CheckAuth = () => {
+// FOR GETTING A POST
+export const postById = () => {
+  return async (dispatch) => {
+    try {
+      const res = await axiosInstance.get("/auth/check");
+      // console.log(res);
+      console.log(res.data);
+      dispatch({
+        type: "SET_USER",
+        payload: res.data,
+      });
+    } catch (error) {
+      console.log("CheckAuth Action Error: ", error);
+    }
+  };
+};
+
+// FOR DELETING A POST
+export const deletePost = () => {
   return async (dispatch) => {
     try {
       const res = await axiosInstance.get("/auth/check");

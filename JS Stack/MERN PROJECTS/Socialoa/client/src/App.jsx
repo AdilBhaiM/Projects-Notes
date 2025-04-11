@@ -12,6 +12,7 @@ import ScheduledPosts from "./components/Dashoard/ScheduledPosts";
 import HomePage from "./components/Dashoard/HomePage";
 import Analytics from "./components/Dashoard/Analytics";
 import Error from "./pages/404Error";
+import Settings from "./components/Dashoard/Api_Key";
 
 function App() {
   const dispatch = useDispatch();
@@ -41,6 +42,7 @@ function App() {
           <Route path="dashboard" element={authUser ? <HomePage /> : <Navigate to="/authentication"/>} />
           <Route path="schedule_post" element={authUser ? <ScheduledPosts /> : <Navigate to="/authentication" />} />
           <Route path="analytics" element={authUser ? <Analytics /> : <Navigate to="/authentication" />} />
+          <Route path="Api_Key" element={authUser ? <Settings /> : <Navigate to="/authentication" />} />
         </Route>
 
         {/* 404 Page */}

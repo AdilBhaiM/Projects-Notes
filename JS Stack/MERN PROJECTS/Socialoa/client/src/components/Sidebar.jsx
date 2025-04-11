@@ -35,6 +35,14 @@ const Sidebar = () => {
             Analytics
           </NavLink>
         </li>
+        <li className="flex-center flex-1 cursor-pointer p-16-semibold w-full">
+          <NavLink to="/Api_Key"
+            className={pathname == "/Api_Key" ? "flex size-full text-white gap-4 py-3 px-8 font-medium rounded-full shadow-inner bg-gray-700 from-purple-400 transition-all ease-linear" : "flex size-full text-white gap-4 py-3 px-8 font-medium rounded-full bg-cover hover:bg-gray-700 hover:shadow-inner from-purple-400 transition-all ease-linear"}
+          >
+            <ChartArea />
+            Api_Key
+          </NavLink>
+        </li>
         <li className="flex-center cursor-pointer p-16-semibold w-full whitespace-nowrap">
           <button
             onClick={logout}
