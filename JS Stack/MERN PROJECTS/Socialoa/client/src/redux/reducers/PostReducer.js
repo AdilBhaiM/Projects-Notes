@@ -1,45 +1,40 @@
-import { authActionTypes } from "../constants/Auth.ActionTypes";
+import { postActionTypes } from "../constants/Post.ActionTypes";
 
 const initialState = {
-  authUser: null,
+  posts: [],
 };
 
 export const PostReducer = (state = initialState, action) => {
   switch (action.type) {
-    case authActionTypes.LOGIN:
-      console.log("case--Login");
+    case postActionTypes.ALL_POSTS:
+      console.log("case--ALL_POSTS");
+      return {
+        ...state,
+        posts: action.payload,
+      };
+    case postActionTypes.POST_BY_ID:
+      console.log("case--POST_BY_ID");
       return {
         ...state,
         authUser: action.payload,
       };
-    case authActionTypes.SIGNUP:
-      console.log("case--Signup");
+    case postActionTypes.CREATE_POST:
+      console.log("case--CREATE_POST");
       return {
         ...state,
         authUser: action.payload,
       };
-    case authActionTypes.VERIFY_EMAIL:
-      console.log("case--Verify");
-      return {
-        ...state,
-        authUser: action.payload,
-      };
-    case authActionTypes.LOGOUT:
-      console.log("case--Logout");
+    case postActionTypes.UPDATE_POST:
+      console.log("case--UPDATE_POST");
       return {
         ...state,
         authUser: null,
       };
-    case authActionTypes.RESET_PASSWORD:
-      console.log("case--reset");
+    case postActionTypes.DELETE_POST:
+      console.log("case--DELETE_POST");
       return {
         ...state,
         authUser: null,
-      };
-    case authActionTypes.SET_USER:
-      return {
-        ...state,
-        authUser: action.payload,
       };
     default:
       return state;

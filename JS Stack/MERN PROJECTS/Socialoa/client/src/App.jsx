@@ -8,11 +8,11 @@ import { CheckAuth } from "./redux/actions/AuthActions";
 import VerifyEmail from "./components/Auth/Forms/VerifyEmail";
 import ResetPassword from "./components/Auth/Forms/ResetPassword";
 import AuthForm from "./components/Auth/Forms/AuthForms";
-import ScheduledPosts from "./components/Dashoard/ScheduledPosts";
-import HomePage from "./components/Dashoard/HomePage";
-import Analytics from "./components/Dashoard/Analytics";
+import ScheduledPosts from "./components/Dashboard/ScheduledPosts";
+import HomePage from "./components/Dashboard/HomePage";
+import Analytics from "./components/Dashboard/Analytics";
 import Error from "./pages/404Error";
-import Settings from "./components/Dashoard/Api_Key";
+import Settings from "./components/Dashboard/Api_Key";
 
 function App() {
   const dispatch = useDispatch();

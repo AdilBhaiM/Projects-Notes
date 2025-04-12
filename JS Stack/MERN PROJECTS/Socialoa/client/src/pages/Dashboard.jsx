@@ -8,7 +8,7 @@ const Dashboard = () => {
     <div className="flex min-h-screen bg-gray-900">
       <Navbar />
       <Sidebar />
-      <main className="pt-[100px] pl-[320px] pr-6 flex-1">
+      <main className="pt-[100px] pb-3 pl-[320px] pr-6 flex-1">
         <Outlet />
       </main>
     </div>

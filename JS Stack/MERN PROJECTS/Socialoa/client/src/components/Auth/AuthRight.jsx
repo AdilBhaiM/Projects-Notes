@@ -16,7 +16,6 @@ const AuthRight = () => {
       </div>
       {/* <AuthForm/> */}
       <AuthForm isLogin={Login} isLoggingIn={()=>switchPage()}/>
-      
     </div>
   );
 };
