@@ -49,24 +49,9 @@ const HomePage = () => {
     useTable({ columns, data });
   return (
     <div className="flex gap-4 flex-col w-full">
-      <div className="flex text-white gap-2 w-full flex-wrap">
-        <div className="flex p-3 rounded-lg bg-gray-800 flex-col gap-2 min-w-[180px] flex-1 w-full sm:[40%]">
-          <p className="font-thin">Total Posts</p>
-          <h1 className="text-2xl self-end">123</h1>
-        </div>
-        <div className="flex p-3 rounded-lg bg-gray-800 flex-col gap-2 min-w-[180px] flex-1 w-full sm:[40%]">
-          <p className="font-thin">Scheduled Posts</p>
-          <h1 className="text-2xl self-end">123</h1>
-        </div>
-        <div className="flex p-3 rounded-lg bg-gray-800 flex-col gap-2 min-w-[180px] flex-1 w-full sm:[40%]">
-          <p className="font-thin">Draft Posts</p>
-          <h1 className="text-2xl self-end">123</h1>
-        </div>
-      </div>
       {/* Table */}
-
       <h1 className="text-xl font-normal text-white">Scheduled Posts</h1>
-      <div className="overflow-x-auto w-full">
+      <div className="overflow-x-auto w-full rounded-[14px]">
         <table
           {...getTableProps()}
           className="min-w-full bg-black text-white rounded-lg"
@@ -83,7 +68,7 @@ const HomePage = () => {
                       <th
                         key={key}
                         {...restColumnProps}
-                        className="px-4 py-3 text-left font-light text-gray-300 uppercase tracking-wider"
+                        className="px-4 py-5 text-left font-light text-gray-300 uppercase tracking-wider"
                       >
                         {column.render("Header")}
                       </th>
@@ -105,7 +90,7 @@ const HomePage = () => {
                       <td
                         key={key}
                         {...restCellProps}
-                        className="px-4 py-2 whitespace-normal break-words min-w-full max-w-xs overflow-hidden text-ellipsis"
+                        className="px-4 py-5 whitespace-normal break-words min-w-full max-w-xs overflow-hidden text-ellipsis"
                       >
                         {cell.render("Cell")}
                       </td>

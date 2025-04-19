@@ -24,7 +24,7 @@ const Sidebar = () => {
         {isLoadingUsers ? (
           <SidebarSkeleton />
         ) : (
-          users.map((user) => (
+          users?.map((user) => (
             <button
               onClick={() => {
                 setSelectedUser(user);

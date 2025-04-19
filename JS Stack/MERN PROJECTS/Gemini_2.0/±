@@ -1,0 +1,47 @@
+Changes
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# interactive rebase in progress; onto 0071e93
+# Last command done (1 command done):
+#    pick 2283774 Changes
+# No commands remaining.
+# You are currently rebasing branch 'master' on '0071e93'.
+#
+# Changes to be committed:
+#	new file:   .gitignore
+#	modified:   README.md
+#	new file:   eslint.config.js
+#	new file:   index.html
+#	new file:   package-lock.json
+#	new file:   package.json
+#	new file:   public/vite.svg
+#	new file:   src/App.jsx
+#	new file:   src/assets/assets.js
+#	new file:   src/assets/bulb_icon.png
+#	new file:   src/assets/code_icon.png
+#	new file:   src/assets/compass_icon.png
+#	new file:   src/assets/gallery_icon.png
+#	new file:   src/assets/gallery_icon2.png
+#	new file:   src/assets/gemini_icon.png
+#	new file:   src/assets/history_icon.png
+#	new file:   src/assets/menu_icon.png
+#	new file:   src/assets/message_icon.png
+#	new file:   src/assets/mic_icon.png
+#	new file:   src/assets/plus_icon.png
+#	new file:   src/assets/question_icon.png
+#	new file:   src/assets/send_icon.png
+#	new file:   src/assets/setting_icon.png
+#	new file:   src/assets/user_icon.png
+#	new file:   src/assets/youtube_icon.png
+#	new file:   src/components/Main/main.css
+#	new file:   src/components/Main/main.jsx
+#	new file:   src/components/Side Bar/sidebar.css
+#	new file:   src/components/Side Bar/sidebar.jsx
+#	new file:   src/config/gemini.js
+#	new file:   src/context/context.jsx
+#	new file:   src/index.css
+#	new file:   src/main.jsx
+#	new file:   vite.config.js
+:wq#:wq

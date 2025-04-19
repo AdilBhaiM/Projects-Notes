@@ -13,7 +13,7 @@ for i, char in enumerate(story):
     if char == end_of_word:
         word = story[ind: i+1]
         words.add(word)
-        
+
 
 for word in words:
     answer = input(f"Write a word to replace {word} :")
