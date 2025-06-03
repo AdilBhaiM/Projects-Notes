@@ -1,5 +1,8 @@
 import pool from '../config/db.js';
 
+
+
+
 const getAllUsersServices = async ()=>{
     const result = await pool.query("SELECT * FROM users");
     return result.rows;
@@ -20,3 +23,5 @@ const deleteUserServices = async (id)=>{
     const result = await pool.query("DELETE FROM users WHERE id = $1 RETURNING *", [id])
     return result.rows[0];
 }
+
+
