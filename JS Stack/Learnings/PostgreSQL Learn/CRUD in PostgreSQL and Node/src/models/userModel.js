@@ -24,4 +24,3 @@ const deleteUserServices = async (id)=>{
     return result.rows[0];
 }
 
-
