@@ -1,19 +1,34 @@
-import pkg from 'pg';
-import dotenv from 'dotenv'
-const { Pool } = pkg;
+import Knex from 'knex';
+import dotenv from 'dotenv';
+import { Model } from 'objection';
 
-dotenv.config()
+dotenv.config();
 
-const db_pool = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT
-})
+const knex = Knex({
+    client: 'pg',
+    connection: {
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        database: process.env.DB_NAME,
+        password: process.env.DB_PASSWORD,
+        port: process.env.DB_PORT
+    },
+    pool: {
+        min: 2,
+        max: 10
+    }
+});
 
-db_pool.on("connect", () => {
-    console.log(`Database connection has been established`);
-})
+// Bind Objection models to this knex instance
+Model.knex(knex);
 
-export default db_pool;
+// Check if the database is connected properly
+knex.raw('select 1+1 as result')
+    .then(() => {
+        console.log('Database connection has been established');
+    })
+    .catch(err => {
+        console.error('Failed to connect to the database:', err);
+    });
+
+export default knex;
