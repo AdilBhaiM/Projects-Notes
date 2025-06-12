@@ -1,0 +1,5 @@
+services:
+  image:
+    ports:
+      - "8080:80"
+  
