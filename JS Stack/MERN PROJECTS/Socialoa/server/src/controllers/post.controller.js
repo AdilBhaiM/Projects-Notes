@@ -23,7 +23,7 @@ export const createPost = async (req, res) => {
     });
   if (!platforms.every((platform) => validPlatforms.includes(platform)))
     return res.status(401).json({
-      message: "Platforma aren't valid",
+      message: "Platforms aren't valid",
     });
   if (!validStatus.includes(status))
     return res.status(401).json({

@@ -1,7 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import pool from './config/db.js'
+import './config/db.js'
+import User from './models/userModel.js'
 
 dotenv.config();
 
@@ -17,9 +18,11 @@ app.use(cors())
 
 app.get('/', async (req, res)=>{
     console.log("Connection Start");
-    const result = await pool.query('SELECT current_database()')
+    // const result = await pool.query('SELECT current_database()')
+    const users = await User.query().limit(5);
     console.log("Connection Stop");
-    res.send(`This database name is : ${result.rows[0].current_database}`)
+    res.json({ message: 'Connected successfully', users });
+    // res.send(`This database name is : ${result.rows[0].current_database}`)
 })
 
 

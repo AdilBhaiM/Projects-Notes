@@ -39,14 +39,14 @@ function App() {
 
         {/* Dashboard Routes */}
         <Route path="/" element={authUser ? <Dashboard /> : <Navigate to="/authentication" />}>
-          <Route path="dashboard" element={authUser ? <HomePage /> : <Navigate to="/authentication"/>} />
+          <Route path="dashboard" element={authUser ? <HomePage /> : <Navigate to="/authentication" />} />
           <Route path="schedule_post" element={authUser ? <ScheduledPosts /> : <Navigate to="/authentication" />} />
           <Route path="analytics" element={authUser ? <Analytics /> : <Navigate to="/authentication" />} />
           <Route path="Api_Key" element={authUser ? <Settings /> : <Navigate to="/authentication" />} />
         </Route>
 
         {/* 404 Page */}
-        <Route path="*" element={<Error/>} />
+        <Route path="*" element={<Error />} />
       </Routes>
       <Toaster />
     </>
