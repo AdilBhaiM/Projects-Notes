@@ -1,27 +1,21 @@
 // Longest Palindromic Substring Problem ========-----------------==========
-
+/**
+ * @param {string} s
+ * @return {string}
+ */
 var longestPalindrome = function(s) {
-    let palindromFound = false;
     let finalString = "";
-    if (s.length <= 1 || (s.length == 2 && s[0] !== s[1])) {
-        finalString = s[0];
-    }else{
-        for(let i=0; i <= s.length; i++){
-            finalString = s[i];
-            let partialValue = "";
-            for(let j=i+1; j <= s.length; j++){
-                partialValue = partialValue + s[j]
-                if(s[j] === finalString){
-                    palindromFound = true;
-                    break;
-                }
+    function isPalindrome(str) {
+        return str === str.split('').reverse().join('');
+    }
+    for (let i = 0; i < s.length; i++) {
+        for (let j = i; j < s.length; j++) {
+            let currentSub = s.substring(i, j + 1);
+            if (isPalindrome(currentSub) && currentSub.length > finalString.length) {
+                finalString = currentSub;
             }
-            if(palindromFound === true) break;
         }
     }
     return finalString;
 };
-
-
-console.log(longestPalindrome("aa"));
-
+console.log(longestPalindrome("lkjljlkljljlljljljlljljj"));
