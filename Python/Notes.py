@@ -1,5 +1,5 @@
-from numpy import *
-from functools import reduce
+# from numpy import *
+# from functools import reduce
 # a = 20.23
 # b = a + float(30)
 # print(b)
@@ -188,7 +188,38 @@ from functools import reduce
 #     print(array[i])
 #     i += 1
 
-nums = [2, 2, 1, 1]
+# nums = [2, 2, 1, 1]
 
-print("Your Answer is ", reduce(equal, nums))
-print()
+# print("Your Answer is ", reduce(equal, nums))
+# print()
+
+# class Bird:
+#     def sound(self):
+#         print("Birds make sound.")
+
+# class Crow(Bird):
+#     def Caw(self):
+#         print("Crow make sound.")
+
+# class Cat(Bird):
+#     def meow(self):
+#         print("Cat make sound.")
+
+# bird = Bird()
+# bird2 = Crow()
+# bird3 = Cat()
+
+# bird.sound()
+# bird2.sound()
+# bird3.sound()
+
+# from array import *
+# arr_len = int(input("How many numbers do you want to find the average of? = "))
+# arr = array('i' , [])
+# for i in range(1, arr_len+1):
+#     num = int(input(f"Write your {i} number = "))
+#     arr.append(num)
+
+# sum_value = sum(arr)/arr_len
+
+# print(type(arr))

@@ -128,7 +128,7 @@ while True and do_you == "y":
             print()
             no_calculations = input("How many calculations you want to do? = ")
             
-            no_of_calculations = get_valid_input(no_calculations)
+            no_of_calculations = get_valid_input(no_calculations, 1)
             if no_of_calculations in range(methods_len+1):
                 break
             else:
