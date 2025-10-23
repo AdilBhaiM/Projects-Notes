@@ -23,15 +23,15 @@ import numpy as np
 
 ###### 3D Array ######
 
-arr = np.array([["A", "B", "C"],
-                ["E", "F", "G"],
-                ["H", "I", "J"],
-                ["h", "t", "w"]]
-                )
+# arr = np.array([["A", "B", "C"],
+#                 ["E", "F", "G"],
+#                 ["H", "I", "J"],
+#                 ["h", "t", "w"]]
+#                 )
                 # [["K", "L", "M"], ["N", "O", "P"], ["Q", "R", "S"]],
                 # [["T", "U", "V"], ["W", "X", "Y"], ["Z", "D", " "]]])
 
-print(arr[1, 0]) # Slice the array and get the rows of your choice of the 2D array
+# print(arr[1, 0]) # Slice the array and get the rows of your choice of the 2D array
 
 # print(arr)
 
