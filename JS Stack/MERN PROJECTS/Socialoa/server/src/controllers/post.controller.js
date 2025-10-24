@@ -159,8 +159,6 @@ export const getUserPosts = async (req, res) => {
     }
     res.status(200).json({
       posts: allPosts,
-
-
     });
   } catch (error) {
     console.log("Error in fetching Posts : ", error);
