@@ -154,13 +154,13 @@ export const getUserPosts = async (req, res) => {
     });
     if (!allPosts) {
       return res.status(404).json({
-        message: "No post",
+        message: "No posts for this user.",
       });
     }
     res.status(200).json({
       posts: allPosts,
 
-      
+
     });
   } catch (error) {
     console.log("Error in fetching Posts : ", error);
