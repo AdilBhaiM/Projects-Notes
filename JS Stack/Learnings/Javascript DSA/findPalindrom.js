@@ -15,9 +15,9 @@ var isPalindrome = function(x) {
         r = r * 10 + v % 10
         v = Math.floor(v / 10)
     }
-    
+
     return v === r || v === Math.floor(r)
-    
+
 };
 
 let result = isPalindrome(12)
