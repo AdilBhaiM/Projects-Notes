@@ -4,4 +4,5 @@
  */
 var longestCommonPrefix = function(strs) {
     
+    
 };
