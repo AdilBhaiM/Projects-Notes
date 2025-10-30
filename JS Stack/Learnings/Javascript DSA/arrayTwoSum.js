@@ -14,6 +14,7 @@ var twoSum = function(nums, target) {
     }
 
     seen.set(nums[i], i);
+
   }
 
   return [];
