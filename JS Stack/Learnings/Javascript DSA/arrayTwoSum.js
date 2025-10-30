@@ -10,6 +10,7 @@ var twoSum = function(nums, target) {
     const complement = target - nums[i];
 
     if (seen.has(complement)) {
+        
       return [seen.get(complement), i];
     }
 
