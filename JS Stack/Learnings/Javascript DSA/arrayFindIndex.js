@@ -16,6 +16,8 @@ var searchInsert = function(nums, target) {
         }
     }
 };
+
+
 let result = searchInsert([1,3,5,6], 7)
 
 console.log(result)
