@@ -9,6 +9,7 @@ var plusOne = function(digits) {
             digit[i] += 1;
             return digit;
         }
+        
         digits[i] = 0;
         i += -1;
     }
