@@ -18,5 +18,5 @@ const mat_kaato_isko = {
 mat_kaato_isko.__proto__ = kaat_do_isko
 
 kaat_do_isko.kaat_isko(2)
-mat_kaato_isko.kaat_de_isko(3)
+
 console.log(arr)
