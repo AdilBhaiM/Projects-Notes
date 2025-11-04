@@ -6,5 +6,7 @@ const caat_do_isko = {
         console.log("kaat dya isko menee hahahha.. ", arr.splice(kaat_isko, 1)[0])
     }
 }
+
+
 caat_do_isko.caat_dall(2)
 console.log(arr)
