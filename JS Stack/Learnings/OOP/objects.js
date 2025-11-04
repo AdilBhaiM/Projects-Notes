@@ -2,13 +2,21 @@ let arr = [1, 2, 3, 4, 5, 6, 7, 8]
 
 
 
-const caat_do_isko = {
+const kaat_do_isko = {
     'bakra' : 0,
-    caat_dall(kaat_isko){
-        console.log("kaat dya isko menee hahahha.. ", arr.splice(kaat_isko, 1)[0])
+    kaat_isko(kaat_de_isko){
+        console.log("kaat dya isko menee hahahha.. ", arr.splice(kaat_de_isko, 1)[0])
+    }
+}
+const mat_kaato_isko = {
+    'bakra' : 0,
+    mat_katna(mat_kat_isko){
+        console.log("kaat dya isko menee hahahha.. ", arr.splice(mat_kat_isko, 1)[0])
     }
 }
 
+mat_kaato_isko.__proto__ = kaat_do_isko
 
-caat_do_isko.caat_dall(2)
+kaat_do_isko.kaat_isko(2)
+mat_kaato_isko.kaat_de_isko(3)
 console.log(arr)
