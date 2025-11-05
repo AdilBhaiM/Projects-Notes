@@ -9,7 +9,7 @@ class Hello {
 }
 
 class Greetings extends Hello{
-    
+
     constructor(getout){
         super("No") // -------> Without this javascript will throw an error that you are not creating the instance of the Child class. so please add this keyword to run its constructor.
         this.getOut = getout
