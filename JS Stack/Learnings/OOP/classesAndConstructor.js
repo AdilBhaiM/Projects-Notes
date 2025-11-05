@@ -20,6 +20,8 @@ class Greetings extends Hello{
 }
 
 const hi = new Hello("Harry")
+
+
 const Salam = new Greetings("Sarah")
 hi.heySayIt("John")
 Salam.sayIt()
