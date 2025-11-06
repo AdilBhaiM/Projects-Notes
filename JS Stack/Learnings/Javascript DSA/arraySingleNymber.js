@@ -11,8 +11,9 @@ let res = singleNumber([1, 2, 6, 1, 6])
 console.log("RESULT 1 :" , res)
 
 
-// -----------> Single Number 2 -------------
 
+
+// -----------> Single Number 2 -------------
 
 function singleNumber2(nums) {
   let ones = 0, twos = 0;
