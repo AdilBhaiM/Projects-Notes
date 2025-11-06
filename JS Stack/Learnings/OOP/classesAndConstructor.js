@@ -26,11 +26,3 @@
 // const Salam = new Greetings("Sarah")
 // hi.heySayIt("John")
 // Salam.sayIt()
-
-
-if(true === false){
-        console.log("Assalam u Alaikum, IFFF")
-}else if(true !== false){
-    console.log("Assalam u Alaikum, ELSEEE")
-
-}
