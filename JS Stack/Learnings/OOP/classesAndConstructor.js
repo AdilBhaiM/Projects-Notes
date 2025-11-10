@@ -26,3 +26,20 @@
 // const Salam = new Greetings("Sarah")
 // hi.heySayIt("John")
 // Salam.sayIt()
+
+
+
+{
+  "model": "<model>",
+  "temperature": <temperature>,
+  "messages": [
+    {
+      "role": "system",
+      "content": "<system_content>"
+    },
+    {
+      "role": "user",
+      "content": "<user_content><user_input>"
+    }
+  ]
+}
