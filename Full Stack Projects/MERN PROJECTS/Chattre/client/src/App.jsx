@@ -10,7 +10,7 @@ import { authStore } from "./store/AuthStore";
 import { Toaster } from "react-hot-toast";
 
 function App() {
-  const { authUser, checkAuth, onlineUsers } = authStore();
+  const { authUser, checkAuth } = authStore();
 
   // console.log({onlineUsers});
 
