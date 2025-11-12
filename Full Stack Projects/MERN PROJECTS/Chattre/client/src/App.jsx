@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import { authStore } from "./store/AuthStore";
 import { Toaster } from "react-hot-toast";
 
+
 function App() {
   const { authUser, checkAuth } = authStore();
 
