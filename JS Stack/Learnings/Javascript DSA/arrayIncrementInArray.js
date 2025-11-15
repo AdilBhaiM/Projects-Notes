@@ -13,13 +13,14 @@ var plusOne = function(digits) {
             digits[digits.length + i] += 1;
             return digits;
 
+            
         }else if(digits[digits.length + i] === 9 && digits.length + i === 0){
 
             digits[digits.length + i] = 0;
             digits.unshift(1)
             return digits;
 
-            
+
         }else{
 
             digits[digits.length + i] = 0;
