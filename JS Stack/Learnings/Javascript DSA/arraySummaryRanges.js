@@ -15,6 +15,9 @@ var summaryRanges = function(nums) {
             }
             start = nums[i];
         }
+
+
+        
     }
 
     // Append the last range
