@@ -17,9 +17,14 @@ var summaryRanges = function(nums) {
         }
 
 
-        
+
     }
 
+
+
+
+
+    
     // Append the last range
     let end = nums[nums.length - 1];
     if (end !== start) {
