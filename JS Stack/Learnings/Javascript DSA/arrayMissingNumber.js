@@ -1,5 +1,8 @@
 var missingNumber = function(nums) {
+
     let xor = 0;
+
+    
     const n = nums.length;
     
     // XOR all numbers from 0..n
@@ -9,11 +12,11 @@ var missingNumber = function(nums) {
     }
     
     // XOR all elements of nums
-    
+
     for (let num of nums) {
         xor ^= num;
-
     }
     
     return xor;
+
 };
