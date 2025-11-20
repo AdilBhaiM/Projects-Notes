@@ -3,8 +3,10 @@ class Solution:
     def moveZeroes(self, nums) -> None:
 
         num = 0
+        
 
         for i in range(len(nums)):
+
 
 
 
