@@ -1,6 +1,8 @@
 class Solution:
+    
 
     def moveZeroes(self, nums) -> None:
+
 
         num = 0
 
@@ -14,6 +16,6 @@ class Solution:
 
 
                 nums[num], nums[i] = nums[i], nums[num]
-                
+
 
                 num += 1
