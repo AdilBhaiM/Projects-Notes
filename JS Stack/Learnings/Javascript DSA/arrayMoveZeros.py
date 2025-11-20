@@ -18,4 +18,5 @@ class Solution:
                 nums[num], nums[i] = nums[i], nums[num]
 
 
+
                 num += 1
