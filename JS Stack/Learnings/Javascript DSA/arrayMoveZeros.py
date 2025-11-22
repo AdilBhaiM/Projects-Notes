@@ -1,6 +1,4 @@
 class Solution:
-
-
     def moveZeroes(self, nums) -> None:
 
 
@@ -12,7 +10,9 @@ class Solution:
 
 
 
+
             if nums[i] != 0:
+
 
 
                 nums[num], nums[i] = nums[i], nums[num]
