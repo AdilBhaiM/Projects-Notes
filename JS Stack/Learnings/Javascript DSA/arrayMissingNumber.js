@@ -5,7 +5,7 @@ var missingNumber = function(nums) {
 
     const n = nums.length;
 
-    
+
     
     // XOR all numbers from 0..n
 
@@ -21,5 +21,7 @@ var missingNumber = function(nums) {
     }
     
     return xor;
+
+    
 
 };
