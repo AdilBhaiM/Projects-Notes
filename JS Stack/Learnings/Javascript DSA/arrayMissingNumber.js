@@ -8,6 +8,7 @@ var missingNumber = function(nums) {
 
     
     // XOR all numbers from 0..n
+    
 
     for (let i = 0; i <= n; i++) {
 
