@@ -13,10 +13,11 @@ var missingNumber = function(nums) {
     for (let i = 0; i <= n; i++) {
 
         xor ^= i;
+        
     }
     
     // XOR all elements of nums
-    
+
 
     for (let num of nums) {
         xor ^= num;
