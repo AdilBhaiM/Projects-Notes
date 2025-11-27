@@ -10,6 +10,7 @@ class Solution:
             'M' : 1000
         }
         total = 0
+        
         for i in range(len(s)):
             currNumeral = s[i]
             if len(s) > i + 1 and roman[currNumeral] < roman[s[i + 1]]:
