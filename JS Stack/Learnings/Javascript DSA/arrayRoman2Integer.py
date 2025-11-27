@@ -1,5 +1,7 @@
 class Solution:
+
     def romanToInt(self, s: str) -> int:
+
         roman = {
             'I' : 1,
             'V' : 5,
@@ -9,6 +11,7 @@ class Solution:
             'D' : 500,
             'M' : 1000
         }
+        
         total = 0
         
         for i in range(len(s)):
@@ -17,4 +20,5 @@ class Solution:
                 total -= roman[currNumeral]
             else:
                 total += roman[currNumeral]
+
         return total
