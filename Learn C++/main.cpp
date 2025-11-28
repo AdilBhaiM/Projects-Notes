@@ -6,6 +6,7 @@ int main(){
     int a, b, c;
     a = 1;
     short sa = 3;
+    
     cout<<sa<<endl<<a<<endl;
 
     // cout<< "Hello World\n";
