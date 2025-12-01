@@ -10,6 +10,7 @@ class Solution:
             myRows[currRow] += s[i]
             if currRow == numRows-1 and direction == +1:
                 direction = -1
+                
             elif currRow == 0 and direction == -1:
                 direction = +1
             if direction == +1:
