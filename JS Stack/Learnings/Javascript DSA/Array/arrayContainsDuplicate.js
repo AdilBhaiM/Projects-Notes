@@ -20,3 +20,6 @@ function containsNearbyDuplicate(nums, k) {
     }
     return false;
 };
+
+
+// [23,4, 6, 7, 8, 89, 9, 23, 6]
