@@ -2,6 +2,7 @@ class Solution:
     def convert(self, s: str, numRows: int) -> str:
         n = len(s)
         if n < numRows or n == 1 or numRows == 1:
+            
             return s
         currRow = 0
         direction = +1
