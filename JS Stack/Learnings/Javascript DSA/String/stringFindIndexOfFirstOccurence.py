@@ -7,6 +7,3 @@ class Solution:
             if haystack[i:i+n] == needle:
                 return i
         return -1
-    
-
-    
