@@ -39,13 +39,9 @@ class Solution:
             myRows[currRow].append(s[i])
             if currRow == 0:
                 direction = +1
-                
+
             elif currRow == numRows - 1:
                 direction = -1
             currRow += direction
         result = ''.join([''.join(r) for r in myRows])
         return result
-
-a = Solution()
-b = a.convert("PAYPALISHIRING", 3)
-print(b)
