@@ -32,10 +32,12 @@ class Solution:
         n = len(s)
         if numRows == 1 or n <= numRows:
             return s
+        
         currRow = 0
         direction = +1
-        myRows = [[] for _ in range(numRows)]
         
+        myRows = [[] for _ in range(numRows)]
+
         for i in range(n):
             myRows[currRow].append(s[i])
             if currRow == 0:
