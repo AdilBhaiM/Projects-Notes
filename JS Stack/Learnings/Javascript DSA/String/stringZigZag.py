@@ -35,10 +35,11 @@ class Solution:
         currRow = 0
         direction = +1
         myRows = [[] for _ in range(numRows)]
+        
         for i in range(n):
             myRows[currRow].append(s[i])
             if currRow == 0:
-                direction = +
+                direction = +1
             elif currRow == numRows - 1:
                 direction = -1
             currRow += direction
