@@ -30,7 +30,7 @@ class Solution:
 
     def convert(self, s: str, numRows: int) -> str:
         n = len(s)
-        
+
         if numRows == 1 or n <= numRows:
             return s
         
@@ -44,6 +44,7 @@ class Solution:
             if currRow == 0:
                 direction = +1
             elif currRow == numRows - 1:
+                
                 direction = -1
             currRow += direction
 
