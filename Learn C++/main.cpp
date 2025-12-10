@@ -10,5 +10,8 @@ int main(){
     short sa = 3;
     cout<<sa<<endl<<a<<endl;
     // cout<< "Hello World\n";
+
+    
     // return 0;
 }
+
