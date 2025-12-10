@@ -7,6 +7,8 @@ int main(){
     a = 1;
     short sa = 3;
     cout<<sa<<endl<<a<<endl;
+
+    
     // cout<< "Hello World\n";
     // return 0;
 }
