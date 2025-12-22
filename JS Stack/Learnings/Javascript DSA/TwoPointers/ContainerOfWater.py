@@ -12,4 +12,3 @@ class Solution:
                 left = i
             else:
                 right = i - right
-
